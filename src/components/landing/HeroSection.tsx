@@ -84,7 +84,7 @@ export function HeroSection() {
               <p className="absolute left-0 top-[7px] w-full text-center text-[128px] font-black uppercase leading-none text-white">
                 FIND YOUR
               </p>
-              <p className="neon-script-hero absolute left-[470px] top-[22px] z-10 whitespace-nowrap text-[240px] leading-none text-white">
+              <p className="neon-script-hero absolute left-[470px] top-[92px] z-10 whitespace-nowrap text-[240px] leading-none text-white">
                 Sound
               </p>
               {/* Figma: full welcome copy sits under FIND YOUR (left of Sound) */}
