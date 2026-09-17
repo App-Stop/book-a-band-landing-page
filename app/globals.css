@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Syne:wght@400;600;700;800&display=swap");
+@import "tailwindcss";
+
+:root {
+  --font-display: "Syne", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "Great Vibes", cursive;
+  --cyan: #00c9c6;
+  --purple: #a240ff;
+  --pink: #ff42dc;
+  --glass-shadow: 0px 685px 96px rgba(0, 0, 0, 0),
+    0px 438px 87.5px rgba(0, 0, 0, 0.01), 0px 246px 74px rgba(0, 0, 0, 0.03),
+    0px 110px 55px rgba(0, 0, 0, 0.05), 0px 27px 30px rgba(0, 0, 0, 0.06);
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  overflow-x: hidden;
+  background: #05010f;
+  color: #fff;
+  font-family: var(--font-display);
+}
+
+/* Figma glassmorphism panels — used by the navbar, badges and pills. */
+@utility glass {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background-color: rgba(24, 19, 45, 0.8);
+  backdrop-filter: blur(15px);
+  box-shadow: var(--glass-shadow);
+}
+
+/* Lighter variant for the large stat cards. */
+@utility glass-soft {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background-color: rgba(24, 19, 45, 0.2);
+  backdrop-filter: blur(15px);
+  box-shadow: var(--glass-shadow);
+}
+
+/* Figma page gutters: 140px at 1920, fluid below. */
+@utility page-x {
+  padding-inline: 20px;
+  @media (width >= 640px) {
+    padding-inline: 32px;
+  }
+  @media (width >= 1024px) {
+    padding-inline: clamp(40px, 7.29vw, 140px);
+  }
+}
+
+/* Pink neon handwriting used across the section headings. */
+@utility neon-script {
+  font-family: var(--font-script);
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 0px 0px 4px var(--pink), 0px 0px 8px var(--pink),
+    0px 0px 28px var(--pink), 0px 0px 55px var(--pink), 0px 0px 95px var(--pink);
+}
+
+@keyframes tour-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Drives the 10s bar under the active app-tour item. */
+@utility animate-tour-progress {
+  transform-origin: left;
+  animation: tour-progress 10s linear forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-tour-progress {
+    animation: none;
+    transform: scaleX(1);
+  }
+}
+
+/* Long-form legal pages (Terms / Privacy). */
+.legal-copy {
+  margin-top: 1.75rem;
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.legal-copy h2 {
+  margin-top: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding-bottom: 0.4rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.legal-copy p,
+.legal-copy ul {
+  margin-top: 0.75rem;
+}
+
+.legal-copy ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+
+.legal-copy li + li {
+  margin-top: 0.35rem;
+}
+
+.legal-copy strong {
+  color: #fff;
+  font-weight: 600;
+}
