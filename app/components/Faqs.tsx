@@ -9,7 +9,7 @@ export default function Faqs() {
   const [open, setOpen] = useState(0);
 
   return (
-    <section id="contact" className="w-full bg-[#0c0b1a] border-t border-white/10 py-16 lg:pb-[103px] lg:pt-[181px]">
+    <section id="contact" className="w-full bg-[#0c0b1a] border-t border-white/10 py-16 lg:pb-[103px] lg:pt-[181px] short:pb-[56px] short:pt-[110px]">
       <div className="page-x mx-auto w-full max-w-[1920px]">
         <div className="mx-auto grid w-full max-w-[1314px] grid-cols-1 gap-10 lg:grid-cols-[546px_minmax(0,653px)] lg:justify-between lg:gap-0">
           <div data-reveal="left" className="lg:pt-[5px]">

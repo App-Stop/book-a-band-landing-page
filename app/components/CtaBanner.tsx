@@ -10,7 +10,7 @@ import { storeLinks } from "./site-content";
  */
 export default function CtaBanner() {
   return (
-    <section className="@container w-full bg-[#0f0b21] border-t border-white/10 py-10 lg:pb-[56px] lg:pt-[70px]">
+    <section className="@container w-full bg-[#0f0b21] border-t border-white/10 py-10 lg:pb-[56px] lg:pt-[70px] short:pb-[36px] short:pt-[44px]">
       <div className="mx-auto w-full max-w-[1920px] px-5 sm:px-8 lg:px-0">
         <div data-reveal="scale" className="relative mx-auto flex w-full flex-col gap-8 overflow-hidden rounded-[32px] p-6 sm:p-8 lg:ml-[7.29%] lg:block lg:aspect-[1640/711] lg:w-[85.42%] lg:gap-0 lg:rounded-[5.2cqw] lg:p-0">
           <Image

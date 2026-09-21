@@ -160,7 +160,7 @@ export default function MatchedBands() {
     <ul
       ref={listRef}
       data-reveal="up"
-      className="relative z-10 mt-8 flex cursor-grab gap-3 overflow-x-auto px-4 pb-2 [scrollbar-width:none] active:cursor-grabbing lg:-mt-[57px] lg:gap-[0.52%] lg:px-0 lg:pb-0 [&::-webkit-scrollbar]:hidden"
+      className="relative z-10 mt-8 flex cursor-grab gap-3 overflow-x-auto px-4 pb-2 [scrollbar-width:none] active:cursor-grabbing lg:-mt-[57px] short:-mt-[44px] lg:gap-[0.52%] lg:px-0 lg:pb-0 [&::-webkit-scrollbar]:hidden"
     >
       {Array.from({ length: COPIES }).flatMap((_, copy) =>
         matchedBands.map((band) => {
@@ -170,7 +170,7 @@ export default function MatchedBands() {
             <li
               key={`${copy}-${band.name}`}
               aria-hidden={isClone || undefined}
-              className="relative aspect-[3/4] w-[80vw] max-w-[340px] shrink-0 select-none overflow-hidden rounded-[24px] sm:w-[340px] lg:aspect-[800/600] lg:w-[41.667%] lg:max-w-none lg:rounded-[30px]"
+              className="relative aspect-[3/4] w-[80vw] max-w-[340px] shrink-0 select-none overflow-hidden rounded-[24px] sm:w-[340px] lg:aspect-[800/600] short:aspect-[800/520] lg:w-[41.667%] lg:max-w-none lg:rounded-[30px]"
             >
               <Image
                 src={band.image}

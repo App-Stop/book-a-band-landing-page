@@ -20,7 +20,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#0f0b21] border-t border-white/10 py-16 lg:pb-[121px] lg:pt-[118px]">
+    <section className="relative w-full overflow-hidden bg-[#0f0b21] border-t border-white/10 py-16 lg:pb-[121px] lg:pt-[118px] short:pb-[56px] short:pt-[96px]">
       {/* Figma: violet bloom on the right, blue bloom on the left */}
       <div className="pointer-events-none absolute right-[-8%] top-[25%] h-[700px] w-[1000px] bg-[radial-gradient(ellipse_at_center,rgba(120,20,190,0.4),transparent_66%)]" />
       <div className="pointer-events-none absolute left-[-6%] top-[30%] h-[700px] w-[900px] bg-[radial-gradient(ellipse_at_center,rgba(20,50,140,0.42),transparent_66%)]" />
@@ -39,7 +39,7 @@ export default function Testimonials() {
           </p>
         </div>
 
-        <div data-reveal="scale" className="mx-auto mt-10 flex max-w-[1920px] items-center justify-center gap-4 px-4 lg:mt-[59px] lg:gap-[4.1cqw] lg:px-0">
+        <div data-reveal="scale" className="mx-auto mt-10 flex max-w-[1920px] items-center justify-center gap-4 px-4 lg:mt-[59px] short:mt-[28px] lg:gap-[4.1cqw] lg:px-0">
           {window.map(({ index, offset }) => {
             const item = testimonials[index];
             const isActive = offset === 0;
@@ -105,7 +105,7 @@ export default function Testimonials() {
           })}
         </div>
 
-        <div data-reveal="up" className="mt-8 flex items-center justify-center gap-[38px] lg:mt-[56px]">
+        <div data-reveal="up" className="mt-8 flex items-center justify-center gap-[38px] lg:mt-[56px] short:mt-[26px]">
           <button
             type="button"
             onClick={() => move(-1)}

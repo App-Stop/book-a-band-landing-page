@@ -26,7 +26,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent lg:hidden" />
       </div>
 
-      <div className="@container relative z-10 mx-auto flex w-full max-w-[1920px] flex-col gap-6 px-5 pb-10 pt-[88px] sm:px-8 sm:pt-[104px] lg:block lg:aspect-[1920/986] lg:gap-0 lg:p-0">
+      <div className="@container relative z-10 mx-auto flex w-full max-w-[1920px] flex-col gap-6 lg:max-w-[min(1920px,calc(100svh*1.68))] px-5 pb-10 pt-[88px] sm:px-8 sm:pt-[104px] lg:block lg:aspect-[1920/986] lg:gap-0 lg:p-0">
         {/* Figma: badge x800 y237 */}
         <p data-hero="badge" className="glass relative z-20 w-fit rounded-[100px] px-3.5 py-2 text-xs font-semibold tracking-[0.32px] text-[#00c9c6] sm:text-sm lg:absolute lg:left-[41.67%] lg:top-[24.04%] lg:px-[0.73cqw] lg:py-[0.52cqw] lg:text-[max(14px,0.83cqw)] lg:leading-[22px]">
           LIVE MUSIC ON DEMAND

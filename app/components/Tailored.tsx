@@ -14,7 +14,7 @@ export default function Tailored() {
   return (
     <section
       id="for-artists"
-      className="relative w-full overflow-hidden bg-[#0f0b21] border-t border-white/10 py-16 lg:pb-[99px] lg:pt-[221px]"
+      className="relative w-full overflow-hidden bg-[#0f0b21] border-t border-white/10 py-16 lg:pb-[99px] lg:pt-[221px] short:pb-[60px] short:pt-[150px]"
     >
       {/* Figma: broad violet bloom centred behind the heading */}
       <div className="pointer-events-none absolute left-1/2 top-[6%] h-[900px] w-[1500px] -translate-x-1/2 bg-[radial-gradient(ellipse_at_center,rgba(110,20,170,0.5),transparent_66%)]" />
@@ -30,7 +30,7 @@ export default function Tailored() {
             hosts &amp; performers
           </ScriptAccent>
 
-          <ul data-stagger="up" className="mx-auto mt-10 grid w-full grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-[125px] lg:ml-[7.29%] lg:w-[85.42%] lg:grid-cols-3 lg:gap-[19px]">
+          <ul data-stagger="up" className="mx-auto mt-10 grid w-full grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-[125px] short:mt-[90px] lg:ml-[7.29%] lg:w-[85.42%] lg:grid-cols-3 lg:gap-[19px]">
             {tailoredCards.map((card, index) => (
               <li
                 key={card.title}
@@ -61,7 +61,7 @@ export default function Tailored() {
             ))}
           </ul>
 
-          <div data-reveal="up" className="mt-8 flex flex-col gap-5 px-0 lg:ml-[7.29%] lg:mt-[40px] lg:w-[85.42%] lg:flex-row lg:items-center lg:justify-between lg:gap-10">
+          <div data-reveal="up" className="mt-8 flex flex-col gap-5 px-0 lg:ml-[7.29%] lg:mt-[40px] short:mt-[24px] lg:w-[85.42%] lg:flex-row lg:items-center lg:justify-between lg:gap-10">
             <p className="max-w-[830px] text-base leading-6 text-white lg:text-[20.4px] lg:leading-[30px]">
               Whether you are curating entertainment for hundreds of wedding
               guests or a touring band booking your weekend gigs, Book a Band

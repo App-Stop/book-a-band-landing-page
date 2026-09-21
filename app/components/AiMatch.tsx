@@ -9,7 +9,7 @@ export default function AiMatch() {
   return (
     <section
       id="ai-match"
-      className="relative w-full overflow-hidden bg-[#0c0b1a] border-t border-white/10 py-16 lg:pb-0 lg:pt-[123px]"
+      className="relative w-full overflow-hidden bg-[#0c0b1a] border-t border-white/10 py-16 lg:pb-0 lg:pt-[123px] short:pt-[88px]"
     >
       {/* Figma: violet bloom behind the heading, deeper glow to the left */}
       <div className="pointer-events-none absolute left-[-10%] top-[10%] h-[900px] w-[1100px] bg-[radial-gradient(ellipse_at_center,rgba(80,40,220,0.6),transparent_66%)]" />
@@ -57,7 +57,7 @@ export default function AiMatch() {
           </ScriptAccent>
 
           {/* Figma: 1308px panel, tucked under the band cards */}
-          <div data-reveal="up" className="relative mx-auto mt-10 grid w-full max-w-[1308px] grid-cols-1 gap-8 rounded-[30px] border border-[#662e69]/70 bg-[linear-gradient(135deg,rgba(45,15,125,0.32),rgba(20,10,40,0.05)_45%,rgba(95,15,105,0.28))] p-6 pb-24 backdrop-blur-md sm:grid-cols-2 lg:mt-[121px] lg:gap-[10px] lg:p-[30px] lg:pb-[90px]">
+          <div data-reveal="up" className="relative mx-auto mt-10 grid w-full max-w-[1308px] grid-cols-1 gap-8 rounded-[30px] border border-[#662e69]/70 bg-[linear-gradient(135deg,rgba(45,15,125,0.32),rgba(20,10,40,0.05)_45%,rgba(95,15,105,0.28))] p-6 pb-24 backdrop-blur-md sm:grid-cols-2 lg:mt-[121px] lg:gap-[10px] lg:p-[30px] lg:pb-[90px] short:mt-[64px] short:pb-[64px]">
             {aiMatchSteps.map((step, stepIndex) => (
               <div key={step.label}>
                 <span

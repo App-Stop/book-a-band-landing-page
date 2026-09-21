@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=The+Nautigal:wght@700&family=Zalando+Sans+Expanded:wght@900&display=swap");
 @import "tailwindcss";
 
+/* Laptop-height screens: sections tighten up so more of each fits on one screen. */
+@custom-variant short (@media (min-width: 1024px) and (max-height: 820px));
+
 :root {
   --font-display: "Zalando Sans Expanded", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
