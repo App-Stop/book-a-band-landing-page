@@ -9,11 +9,11 @@ export default function Faqs() {
   const [open, setOpen] = useState(0);
 
   return (
-    <section id="contact" className="w-full py-16 lg:pb-[158px] lg:pt-[155px]">
+    <section id="contact" className="w-full bg-[#0c0b1a] border-t border-white/10 py-16 lg:pb-[103px] lg:pt-[181px]">
       <div className="page-x mx-auto w-full max-w-[1920px]">
         <div className="mx-auto grid w-full max-w-[1314px] grid-cols-1 gap-10 lg:grid-cols-[546px_minmax(0,653px)] lg:justify-between lg:gap-0">
           <div className="lg:pt-[5px]">
-            <h2 className="display text-[clamp(26px,2.344vw,45px)] leading-[1.29]">
+            <h2 className="display text-[clamp(26px,2.5vw,48px)] leading-[1.21]">
               FAQs
             </h2>
             <p className="mt-5 max-w-[546px] text-base leading-[22px] text-white">
@@ -28,7 +28,7 @@ export default function Faqs() {
             </a>
           </div>
 
-          <ul className="lg:-mt-[23px]">
+          <ul className="lg:-mt-[19px]">
             {faqs.map((faq, index) => {
               const isOpen = index === open;
 

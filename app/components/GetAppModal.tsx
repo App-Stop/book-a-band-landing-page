@@ -120,7 +120,7 @@ function GetAppModal({
         <div className="relative z-10 px-5 pb-5 pt-10 sm:px-10 sm:pb-6 sm:pt-11 lg:px-[48px] lg:pt-12">
           <h2
             id="get-app-title"
-            className="text-center text-[clamp(26px,4vw,40px)] font-extrabold uppercase leading-none tracking-[0.06em]"
+            className="display text-center text-[clamp(22px,4vw,40px)] uppercase leading-none"
           >
             Scan to download
           </h2>

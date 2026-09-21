@@ -12,9 +12,9 @@ const socials: { name: IconName; label: string }[] = [
 
 export default function Footer() {
   return (
-    <footer className="@container w-full pb-8 pt-6 lg:pb-[47px] lg:pt-[62px]">
+    <footer className="@container w-full bg-[#090814] border-t border-white/10 pb-8 pt-6 lg:pb-[47px] lg:pt-[4px]">
       <div className="page-x mx-auto w-full max-w-[1920px]">
-        <p className="display text-center text-[clamp(28px,9.34vw,179px)] uppercase leading-none tracking-[0.03em] text-[#2c1e48] sm:whitespace-nowrap">
+        <p className="display text-center text-[clamp(28px,9.48vw,182px)] uppercase leading-none text-[#2c1e48] sm:whitespace-nowrap">
           Book a Band
         </p>
 

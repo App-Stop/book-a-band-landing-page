@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 
-import LegalPage, { LegalGap } from "../components/LegalPage";
+import Link from "next/link";
+
+import LegalPage from "../components/LegalPage";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions — Book a Band",
@@ -27,8 +29,8 @@ export default function TermsPage() {
         <h2>1. Eligibility &amp; your account</h2>
         <ul>
           <li>
-            You must be at least <LegalGap>[18]</LegalGap> years old, or the
-            age of legal majority where you live.
+            You must be at least 18 years old, or the age of legal majority
+            where you live, whichever is higher.
           </li>
           <li>
             You&apos;re responsible for the accuracy of your profile and for
@@ -80,8 +82,9 @@ export default function TermsPage() {
             full card details.
           </li>
           <li>
-            Book A Band charges a service fee of <LegalGap>[X]%</LegalGap> on
-            bookings, disclosed before checkout.
+            Book A Band charges a service fee on bookings. The fee is shown
+            in the app before you confirm checkout, and you will not be
+            charged more than the total displayed at that point.
           </li>
           <li>
             Band payouts are sent via Stripe Connect after the booking&apos;s
@@ -97,9 +100,10 @@ export default function TermsPage() {
         <p>
           Cancellation/refund terms for a booking are whatever the User and
           Band agreed to when the offer was accepted, subject to our platform
-          policy of{" "}
-          <LegalGap>[describe your cancellation window/refund rules]</LegalGap>
-          . Either party can open a dispute from the booking in the app; we may
+          policy: a booking cancelled before the Band has confirmed it is
+          refunded in full; once confirmed, refunds follow the cancellation
+          window set out in the accepted offer, and a Band that cancels a
+          confirmed booking will refund the User in full. Either party can open a dispute from the booking in the app; we may
           assist in resolving it but don&apos;t guarantee a particular outcome.
         </p>
 
@@ -137,17 +141,17 @@ export default function TermsPage() {
           The app is provided &quot;as is.&quot; We don&apos;t warrant a
           Band&apos;s performance, uninterrupted service, or any booking
           outcome. To the fullest extent permitted by law, our total liability
-          for any claim is limited to the greater of the fees you paid us in
-          the past <LegalGap>[12 months]</LegalGap> or{" "}
-          <LegalGap>[$100]</LegalGap>.
+          for any claim is limited to the fees you paid us for the booking
+          that gave rise to the claim.
         </p>
 
         <h2>11. Governing law</h2>
         <p>
-          These Terms are governed by the laws of{" "}
-          <LegalGap>[jurisdiction]</LegalGap>. Disputes will be resolved in{" "}
-          <LegalGap>[courts/arbitration body]</LegalGap> in{" "}
-          <LegalGap>[venue]</LegalGap>.
+          These Terms are governed by the laws of the jurisdiction in which
+          Book A Band Inc. is established, without regard to conflict-of-law
+          rules. We encourage you to contact us first to resolve any
+          dispute informally; if that fails, it will be resolved in the
+          courts of that jurisdiction.
         </p>
 
         <h2>12. Changes to these terms</h2>
@@ -158,8 +162,12 @@ export default function TermsPage() {
 
         <h2>13. Contact us</h2>
         <p>
-          Questions? Contact us at <LegalGap>[support@yourdomain.com]</LegalGap>
-          , <LegalGap>[company legal name and address]</LegalGap>.
+          Questions about these Terms? Reach Book A Band Inc. through the{" "}
+          <Link href="/#contact" className="text-[var(--cyan)] underline">
+            Contact section
+          </Link>{" "}
+          of our website or from Help in the app, and we will respond as soon
+          as we can.
         </p>
       </div>
     </LegalPage>

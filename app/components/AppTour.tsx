@@ -24,18 +24,18 @@ export default function AppTour() {
   const current = appTourItems[active];
 
   return (
-    <section id="features" className="relative w-full overflow-hidden py-16 lg:pb-[100px] lg:pt-[112px]">
+    <section id="features" className="relative w-full overflow-hidden bg-[#0f0b21] border-t border-white/10 py-16 lg:pb-[117px] lg:pt-[112px]">
       {/* Figma: purple bloom on the right edge behind the phone */}
       <div className="pointer-events-none absolute right-[-12%] top-[20%] h-[1000px] w-[900px] bg-[radial-gradient(ellipse_at_center,rgba(120,20,200,0.55),transparent_68%)]" />
 
       <div className="@container relative mx-auto w-full max-w-[1920px]">
         <div className="relative grid grid-cols-1 items-start gap-12 px-5 sm:px-8 lg:block lg:px-0">
           <div className="min-w-0 lg:ml-[7.29%] lg:w-[42.14%]">
-            <h2 className="display relative text-[clamp(22px,3.125vw,60px)] uppercase leading-[1.3]">
+            <h2 className="display relative text-[clamp(22px,3.334vw,64px)] uppercase leading-[1.25] lg:leading-[1.22]">
               <span className="block whitespace-nowrap">Explore the app</span>
               <span className="block whitespace-nowrap">That brings</span>
               {/* Figma: glow artwork is exported @2x — 858 × 430 at (165, -49) */}
-              <span className="pointer-events-none absolute left-[0.41em] top-[-1.017em] z-10 h-[7.17em] w-[14.3em]">
+              <span className="pointer-events-none absolute left-[0.41em] top-[-0.9em] z-10 h-[7.17em] w-[14.3em] lg:left-[1.28cqw] lg:top-[-3.18cqw] lg:h-[22.4cqw] lg:w-[44.69cqw]">
                 <Image
                   src="/live-music-home.png"
                   alt="Live music home"

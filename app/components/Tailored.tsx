@@ -14,19 +14,19 @@ export default function Tailored() {
   return (
     <section
       id="for-artists"
-      className="relative w-full overflow-hidden py-16 lg:pb-[99px] lg:pt-[223px]"
+      className="relative w-full overflow-hidden bg-[#0f0b21] border-t border-white/10 py-16 lg:pb-[99px] lg:pt-[221px]"
     >
       {/* Figma: broad violet bloom centred behind the heading */}
       <div className="pointer-events-none absolute left-1/2 top-[6%] h-[900px] w-[1500px] -translate-x-1/2 bg-[radial-gradient(ellipse_at_center,rgba(110,20,170,0.5),transparent_66%)]" />
 
       <div className="@container relative mx-auto w-full max-w-[1920px]">
         <div className="relative px-5 sm:px-8 lg:px-0">
-          <h2 className="display text-center text-[clamp(22px,3.125vw,60px)] uppercase leading-[1.3] lg:pr-[15.4%]">
+          <h2 className="display text-center text-[clamp(22px,3.334vw,64px)] uppercase leading-[1.25] lg:leading-[1.22] lg:pr-[15.4%]">
             Tailored
             <span className="block">experiences for</span>
           </h2>
           {/* Figma: script overlaps the end of the heading, x904 */}
-          <ScriptAccent className="mt-2 flex justify-center text-[clamp(30px,5.42vw,104px)] lg:absolute lg:left-[47.6%] lg:top-[6.2cqw] lg:mt-0 lg:block">
+          <ScriptAccent className="mt-2 flex justify-center text-[clamp(46px,6.667vw,128px)] lg:absolute lg:left-[47.6%] lg:top-[4.8cqw] lg:mt-0 lg:block">
             hosts &amp; performers
           </ScriptAccent>
 

@@ -8,15 +8,37 @@ export default function AiMatch() {
   return (
     <section
       id="ai-match"
-      className="relative w-full overflow-hidden py-16 lg:pb-0 lg:pt-[123px]"
+      className="relative w-full overflow-hidden bg-[#0c0b1a] border-t border-white/10 py-16 lg:pb-0 lg:pt-[123px]"
     >
       {/* Figma: violet bloom behind the heading, deeper glow to the left */}
-      <div className="pointer-events-none absolute left-[-10%] top-[10%] h-[900px] w-[1100px] bg-[radial-gradient(ellipse_at_center,rgba(90,30,190,0.5),transparent_66%)]" />
+      <div className="pointer-events-none absolute left-[-10%] top-[10%] h-[900px] w-[1100px] bg-[radial-gradient(ellipse_at_center,rgba(80,40,220,0.6),transparent_66%)]" />
       <div className="pointer-events-none absolute right-[-15%] top-[45%] h-[800px] w-[900px] bg-[radial-gradient(ellipse_at_center,rgba(120,20,190,0.4),transparent_66%)]" />
+
+      {/* Pink glow behind the left guitarist, purple behind the right */}
+      <div className="pointer-events-none absolute left-[-14%] top-[4vw] hidden h-[42vw] w-[42vw] rounded-full bg-[radial-gradient(circle_at_center,rgba(255,66,220,0.55),rgba(214,40,190,0.25)_40%,transparent_70%)] blur-[60px] sm:block lg:left-[-6%]" />
+      <div className="pointer-events-none absolute right-[-16%] top-[8vw] hidden h-[38vw] w-[38vw] rounded-full bg-[radial-gradient(circle_at_center,rgba(150,40,240,0.55),rgba(120,20,190,0.28)_40%,transparent_70%)] blur-[60px] sm:block lg:right-[-8%]" />
+
+      {/* Figma: two guitarist silhouettes flank the heading */}
+      <Image
+        src="/Vector.png"
+        alt=""
+        width={466}
+        height={755}
+        aria-hidden
+        className="pointer-events-none absolute left-[-6%] top-[10vw] hidden w-[24.3vw] max-w-[466px] select-none sm:block lg:left-[3.8%] lg:top-[3.1vw]"
+      />
+      <Image
+        src="/Vector 2.png"
+        alt=""
+        width={384}
+        height={672}
+        aria-hidden
+        className="pointer-events-none absolute right-[-4%] top-[14vw] hidden w-[20vw] max-w-[384px] select-none sm:block lg:right-[2.9%] lg:top-[7.3vw]"
+      />
 
       <div className="@container relative mx-auto w-full max-w-[1920px]">
         <div className="relative px-5 sm:px-8 lg:px-0">
-          <h2 className="display text-center text-[clamp(22px,3.125vw,60px)] uppercase leading-[1.3] lg:pr-[11.56%]">
+          <h2 className="display text-center text-[clamp(22px,3.334vw,64px)] uppercase leading-[1.25] lg:leading-[1.22] lg:pr-[11.56%]">
             Let{" "}
             <span className="bg-gradient-to-r from-[#8b3dff] to-[#f472d0] bg-clip-text text-transparent">
               AI
@@ -25,7 +47,7 @@ export default function AiMatch() {
             <span className="block">best bands</span>
           </h2>
           {/* Figma: script sits under "BANDS", x880 y2760 */}
-          <ScriptAccent className="mt-2 flex justify-center text-[clamp(30px,5.83vw,112px)] lg:absolute lg:left-[46.1%] lg:top-[6.9cqw] lg:mt-0 lg:block">
+          <ScriptAccent className="mt-2 flex justify-center text-[clamp(46px,6.667vw,128px)] lg:absolute lg:left-[46.1%] lg:top-[6.2cqw] lg:mt-0 lg:block">
             For your events
           </ScriptAccent>
 

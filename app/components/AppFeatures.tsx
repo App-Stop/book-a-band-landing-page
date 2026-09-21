@@ -30,7 +30,7 @@ const layout = [
 
 export default function AppFeatures() {
   return (
-    <section className="relative w-full overflow-hidden border-b border-white/[0.06] py-16 lg:py-0">
+    <section className="relative w-full overflow-hidden bg-[#0c0b1a] border-t border-white/10 py-16 lg:py-0">
       {/* Figma: violet blooms behind each phone */}
       <div className="pointer-events-none absolute right-[-10%] top-[2%] h-[1100px] w-[900px] bg-[radial-gradient(ellipse_at_center,rgba(110,20,190,0.42),transparent_66%)]" />
       <div className="pointer-events-none absolute left-[-14%] top-[32%] h-[1100px] w-[900px] bg-[radial-gradient(ellipse_at_center,rgba(110,20,190,0.4),transparent_66%)]" />
@@ -47,7 +47,7 @@ export default function AppFeatures() {
                 feature.reversed ? "lg:pl-0" : ""
               }`}
             >
-              <h2 className={`display flex items-start gap-3.5 text-[clamp(22px,3.125vw,60px)] uppercase leading-[1.3] ${layout[index].gap}`}>
+              <h2 className={`display flex items-start gap-3.5 text-[clamp(22px,3.334vw,64px)] uppercase leading-[1.25] lg:leading-[1.22] ${layout[index].gap}`}>
                 <Icon
                   name={feature.icon}
                   className="mt-[0.16em] size-[0.7em] shrink-0 text-white lg:size-[2.9cqw]"

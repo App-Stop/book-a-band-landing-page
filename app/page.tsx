@@ -1,3 +1,4 @@
+import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import IntroStatement from "./components/IntroStatement";
 import AppTour from "./components/AppTour";
@@ -12,6 +13,7 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <main className="bg-[#0c0b1a]">
+      <Navbar />
       <Hero />
       <IntroStatement />
       <AppTour />

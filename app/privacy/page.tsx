@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 
-import LegalPage, { LegalGap } from "../components/LegalPage";
+import Link from "next/link";
+
+import LegalPage from "../components/LegalPage";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — Book a Band",
@@ -107,8 +109,8 @@ export default function PrivacyPage() {
 
         <h2>6. Children</h2>
         <p>
-          Book A Band is for people who are at least <LegalGap>[18]</LegalGap>{" "}
-          (or the age of majority where they live). We do not knowingly collect
+          Book A Band is for people who are at least 18 years old (or the age
+          of majority where they live). We do not knowingly collect
           personal information from children.
         </p>
 
@@ -122,8 +124,10 @@ export default function PrivacyPage() {
         <h2>8. International transfers</h2>
         <p>
           If you use the app from outside the country where we operate, your
-          information may be processed in <LegalGap>[jurisdiction]</LegalGap>{" "}
-          and other countries where our providers (including Stripe) operate.
+          information may be processed in the country where Book A Band Inc.
+          is established and in other countries where our providers
+          (including Stripe) operate. Where required, we rely on appropriate
+          safeguards for these transfers.
         </p>
 
         <h2>9. Changes to this policy</h2>
@@ -134,9 +138,12 @@ export default function PrivacyPage() {
 
         <h2>10. Contact us</h2>
         <p>
-          Privacy questions? Contact us at{" "}
-          <LegalGap>[support@yourdomain.com]</LegalGap>,{" "}
-          <LegalGap>[company legal name and address]</LegalGap>.
+          Privacy questions? Reach Book A Band Inc. through the{" "}
+          <Link href="/#contact" className="text-[var(--cyan)] underline">
+            Contact section
+          </Link>{" "}
+          of our website or from Help in the app, and we will respond as soon
+          as we can.
         </p>
       </div>
     </LegalPage>

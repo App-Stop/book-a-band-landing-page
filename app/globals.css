@@ -1,16 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Inter:wght@400;500;600;700&family=Unbounded:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=The+Nautigal:wght@700&family=Zalando+Sans+Expanded:wght@900&display=swap");
 @import "tailwindcss";
 
 :root {
-  --font-display: "Unbounded", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Zalando Sans Expanded", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-script: "Comforter Brush", cursive;
+  --font-script: "The Nautigal", cursive;
   --cyan: #00c9c6;
   --purple: #a240ff;
   --pink: #ff42dc;
   --glass-shadow: 0px 685px 96px rgba(0, 0, 0, 0),
     0px 438px 87.5px rgba(0, 0, 0, 0.01), 0px 246px 74px rgba(0, 0, 0, 0.03),
     0px 110px 55px rgba(0, 0, 0, 0.05), 0px 27px 30px rgba(0, 0, 0, 0.06);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
 }
 
 html,
@@ -23,11 +28,11 @@ body {
   font-family: var(--font-body);
 }
 
-/* Figma headings: Unbounded ExtraBold, 8% tracking. */
+/* Figma headings: Zalando Sans Expanded Black. */
 @utility display {
   font-family: var(--font-display);
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  font-weight: 900;
+  letter-spacing: 0;
 }
 
 /* Figma glassmorphism panels — used by the navbar, badges and pills. */
@@ -60,7 +65,7 @@ body {
 /* Pink neon handwriting used across the section headings. */
 @utility neon-script {
   font-family: var(--font-script);
-  font-weight: 400;
+  font-weight: 700;
   color: #fff;
   text-shadow: 0px 0px 4px var(--pink), 0px 0px 8px var(--pink),
     0px 0px 28px var(--pink), 0px 0px 55px var(--pink), 0px 0px 95px var(--pink);

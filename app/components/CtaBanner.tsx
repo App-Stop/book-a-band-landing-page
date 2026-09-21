@@ -10,7 +10,7 @@ import { storeLinks } from "./site-content";
  */
 export default function CtaBanner() {
   return (
-    <section className="@container w-full pb-4 lg:pb-0">
+    <section className="@container w-full bg-[#0f0b21] border-t border-white/10 py-10 lg:pb-[56px] lg:pt-[70px]">
       <div className="mx-auto w-full max-w-[1920px] px-5 sm:px-8 lg:px-0">
         <div className="relative mx-auto flex w-full flex-col gap-8 overflow-hidden rounded-[32px] p-6 sm:p-8 lg:ml-[7.29%] lg:block lg:aspect-[1640/711] lg:w-[85.42%] lg:gap-0 lg:rounded-[5.2cqw] lg:p-0">
           <Image
@@ -22,12 +22,12 @@ export default function CtaBanner() {
           />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(50,10,74,0.92)_0%,rgba(58,12,92,0.82)_55%,rgba(66,16,104,0.72)_100%)]" />
 
-          <h2 className="display relative text-[clamp(22px,3.125vw,60px)] uppercase leading-[1.3] lg:absolute lg:left-[6.16%] lg:top-[13.92%]">
+          <h2 className="display relative text-[clamp(22px,3.334vw,64px)] uppercase leading-[1.25] lg:leading-[1.22] lg:absolute lg:left-[6.16%] lg:top-[13.92%]">
             Ready to bring
-            <span className="block whitespace-nowrap">live music to your</span>
+            <span className="block sm:whitespace-nowrap">live music to your</span>
           </h2>
 
-          <ScriptAccent className="relative text-[clamp(30px,7.45vw,143px)] lg:absolute lg:left-[39.02%] lg:top-[27.5%]">
+          <ScriptAccent className="relative text-[clamp(48px,7.3vw,140px)] lg:absolute lg:left-[39.02%] lg:top-[27.5%]">
             next event?
           </ScriptAccent>
 

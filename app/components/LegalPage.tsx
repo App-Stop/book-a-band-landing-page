@@ -40,7 +40,7 @@ export default function LegalPage({
           </Link>
           <a
             href="#get-app"
-            className="rounded-full border border-white/10 bg-gradient-to-b from-[#0300a6] to-[#ce00af] px-4 py-2 text-xs font-semibold text-white transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] sm:px-5 sm:py-2.5 sm:text-sm"
+            className="rounded-full bg-gradient-to-b from-[#0300a6] to-[#ce00af] px-4 py-2 text-xs font-semibold text-white transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] sm:px-5 sm:py-2.5 sm:text-sm"
           >
             Get the App
           </a>
@@ -48,7 +48,7 @@ export default function LegalPage({
       </header>
 
       <article className="page-x mx-auto w-full max-w-[1400px] pb-16 pt-6 lg:pb-24 lg:pt-10">
-        <h1 className="text-[clamp(28px,4vw,40px)] font-extrabold leading-tight tracking-[0.02em]">
+        <h1 className="display text-[clamp(24px,4vw,40px)] leading-tight">
           {title}
         </h1>
         {children}

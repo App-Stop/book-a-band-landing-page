@@ -20,14 +20,14 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="relative w-full overflow-hidden border-b border-white/[0.06] py-16 lg:pb-[121px] lg:pt-[120px]">
+    <section className="relative w-full overflow-hidden bg-[#0f0b21] border-t border-white/10 py-16 lg:pb-[121px] lg:pt-[118px]">
       {/* Figma: violet bloom on the right, blue bloom on the left */}
       <div className="pointer-events-none absolute right-[-8%] top-[25%] h-[700px] w-[1000px] bg-[radial-gradient(ellipse_at_center,rgba(120,20,190,0.4),transparent_66%)]" />
       <div className="pointer-events-none absolute left-[-6%] top-[30%] h-[700px] w-[900px] bg-[radial-gradient(ellipse_at_center,rgba(20,50,140,0.42),transparent_66%)]" />
 
       <div className="@container relative">
         <div className="page-x mx-auto w-full max-w-[1920px]">
-          <h2 className="display mx-auto text-center text-[clamp(20px,2.344vw,45px)] uppercase leading-[1.29]">
+          <h2 className="display mx-auto text-center text-[clamp(20px,2.5vw,48px)] uppercase leading-[1.21]">
             <span className="block sm:whitespace-nowrap">
               Loved by event hosts &amp;
             </span>

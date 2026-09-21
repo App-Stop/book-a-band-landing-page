@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-import Navbar from "./Navbar";
 import StatsGrid from "./StatsGrid";
 import { storeLinks } from "./site-content";
 
@@ -26,11 +25,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent lg:hidden" />
       </div>
 
-      <div className="@container relative z-10 mx-auto flex w-full max-w-[1920px] flex-col gap-6 px-5 pb-10 sm:px-8 lg:block lg:aspect-[1920/986] lg:gap-0 lg:p-0">
-        <div className="lg:absolute lg:inset-x-0 lg:top-0">
-          <Navbar />
-        </div>
-
+      <div className="@container relative z-10 mx-auto flex w-full max-w-[1920px] flex-col gap-6 px-5 pb-10 pt-[88px] sm:px-8 sm:pt-[104px] lg:block lg:aspect-[1920/986] lg:gap-0 lg:p-0">
         {/* Figma: badge x800 y237 */}
         <p className="glass relative z-20 w-fit rounded-[100px] px-3.5 py-2 text-xs font-semibold tracking-[0.32px] text-[#00c9c6] sm:text-sm lg:absolute lg:left-[41.67%] lg:top-[24.04%] lg:px-[0.73cqw] lg:py-[0.52cqw] lg:text-[max(14px,0.83cqw)] lg:leading-[22px]">
           LIVE MUSIC ON DEMAND
@@ -38,11 +33,11 @@ export default function Hero() {
 
         {/* "Sound" is an image locked to YOUR — em units keep it in sync
             with the fluid heading size at every breakpoint. */}
-        <h1 className="display relative text-[clamp(38px,11vw,72px)] leading-none sm:whitespace-nowrap lg:absolute lg:left-[7.29%] lg:top-[28.8%] lg:text-[6.354cqw] lg:tracking-[0.05em]">
+        <h1 className="display relative pb-[2.2em] pt-[0.6em] text-[clamp(34px,10vw,60px)] leading-none lg:p-0 sm:whitespace-nowrap lg:absolute lg:left-[7.29%] lg:top-[28.6%] lg:text-[6cqw]">
           <span className="block sm:inline">FIND</span>{" "}
-          <span className="relative inline-block">
+          <span className="relative inline-block lg:static">
             YOUR
-            <span className="pointer-events-none absolute left-[-5%] top-[-82%] z-10 h-[3.875em] w-[6.35em] lg:left-[-0.83em] lg:top-[-0.975em] lg:h-[4.057em] lg:w-[6.447em]">
+            <span className="pointer-events-none absolute left-[-5%] top-[-82%] z-10 h-[3.875em] w-[6.35em] lg:left-[17.2cqw] lg:top-[-7.25cqw] lg:h-[25.78cqw] lg:w-[40.96cqw]">
               <Image
                 src="/sound.png"
                 alt="Sound"
@@ -94,7 +89,7 @@ export default function Hero() {
         </div>
 
         {/* Figma: pill x767 y627 (387 × 61) */}
-        <div className="glass flex w-fit shrink-0 items-center gap-2.5 rounded-[100px] py-1.5 pl-1.5 pr-3 sm:gap-3.5 sm:py-2 sm:pl-2 sm:pr-3.5 lg:absolute lg:left-[39.95%] lg:top-[63.64%] lg:gap-[0.83cqw] lg:py-[0.42cqw] lg:pl-[0.42cqw] lg:pr-[0.78cqw]">
+        <div className="glass flex w-fit shrink-0 items-center gap-2.5 rounded-[100px] py-1.5 pl-1.5 pr-3 sm:gap-3.5 sm:py-2 sm:pl-2 sm:pr-3.5 lg:absolute lg:left-[39.95%] lg:top-[63.64%] lg:gap-[0.6cqw] lg:py-[0.42cqw] lg:pl-[0.42cqw] lg:pr-[0.78cqw]">
           <Image
             src="/play.svg"
             alt="Play"
@@ -109,7 +104,7 @@ export default function Hero() {
             height={24}
             className="h-5 w-[54px] sm:h-6 sm:w-[66px] lg:h-[1.25cqw] lg:w-[3.5cqw]"
           />
-          <p className="whitespace-nowrap text-sm leading-normal sm:text-base lg:text-[max(14px,0.83cqw)]">
+          <p className="whitespace-nowrap text-sm leading-normal sm:text-base lg:text-[max(11px,0.83cqw)]">
             <span className="opacity-80">Playing Band:</span>{" "}
             <span className="font-semibold">Live Stage Vibe</span>
           </p>
