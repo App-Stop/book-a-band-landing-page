@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.bookaband.com",
+      "sha256_cert_fingerprints": [
+        "F2:F6:83:23:E6:8D:9B:29:48:82:4A:62:7D:87:D0:8F:1A:D0:10:F5:49:4D:0A:11:C7:4F:42:50:FE:55:7B:50"
+      ]
+    }
+  }
+]
