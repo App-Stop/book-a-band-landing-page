@@ -21,7 +21,7 @@ export default function Tailored() {
 
       <div className="@container relative mx-auto w-full max-w-[1920px]">
         <div className="relative px-5 sm:px-8 lg:px-0">
-          <h2 className="display text-center text-[clamp(22px,3.334vw,64px)] uppercase leading-[1.25] lg:leading-[1.22] lg:pr-[15.4%]">
+          <h2 data-reveal="up" className="display text-center text-[clamp(22px,3.334vw,64px)] uppercase leading-[1.25] lg:leading-[1.22] lg:pr-[15.4%]">
             Tailored
             <span className="block">experiences for</span>
           </h2>
@@ -30,7 +30,7 @@ export default function Tailored() {
             hosts &amp; performers
           </ScriptAccent>
 
-          <ul className="mx-auto mt-10 grid w-full grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-[125px] lg:ml-[7.29%] lg:w-[85.42%] lg:grid-cols-3 lg:gap-[19px]">
+          <ul data-stagger="up" className="mx-auto mt-10 grid w-full grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-[125px] lg:ml-[7.29%] lg:w-[85.42%] lg:grid-cols-3 lg:gap-[19px]">
             {tailoredCards.map((card, index) => (
               <li
                 key={card.title}
@@ -61,7 +61,7 @@ export default function Tailored() {
             ))}
           </ul>
 
-          <div className="mt-8 flex flex-col gap-5 px-0 lg:ml-[7.29%] lg:mt-[40px] lg:w-[85.42%] lg:flex-row lg:items-center lg:justify-between lg:gap-10">
+          <div data-reveal="up" className="mt-8 flex flex-col gap-5 px-0 lg:ml-[7.29%] lg:mt-[40px] lg:w-[85.42%] lg:flex-row lg:items-center lg:justify-between lg:gap-10">
             <p className="max-w-[830px] text-base leading-6 text-white lg:text-[20.4px] lg:leading-[30px]">
               Whether you are curating entertainment for hundreds of wedding
               guests or a touring band booking your weekend gigs, Book a Band

@@ -27,19 +27,19 @@ export default function Testimonials() {
 
       <div className="@container relative">
         <div className="page-x mx-auto w-full max-w-[1920px]">
-          <h2 className="display mx-auto text-center text-[clamp(20px,2.5vw,48px)] uppercase leading-[1.21]">
+          <h2 data-reveal="up" className="display mx-auto text-center text-[clamp(20px,2.5vw,48px)] uppercase leading-[1.21]">
             <span className="block sm:whitespace-nowrap">
               Loved by event hosts &amp;
             </span>
             <span className="block sm:whitespace-nowrap">touring musicians</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-[900px] text-center text-base leading-[30px] text-white lg:mt-5 lg:text-[max(16px,1.04cqw)]">
+          <p data-reveal="up" className="mx-auto mt-4 max-w-[900px] text-center text-base leading-[30px] text-white lg:mt-5 lg:text-[max(16px,1.04cqw)]">
             Real experiences from organizers and artists across Texas,
             California, and beyond.
           </p>
         </div>
 
-        <div className="mx-auto mt-10 flex max-w-[1920px] items-center justify-center gap-4 px-4 lg:mt-[59px] lg:gap-[4.1cqw] lg:px-0">
+        <div data-reveal="scale" className="mx-auto mt-10 flex max-w-[1920px] items-center justify-center gap-4 px-4 lg:mt-[59px] lg:gap-[4.1cqw] lg:px-0">
           {window.map(({ index, offset }) => {
             const item = testimonials[index];
             const isActive = offset === 0;
@@ -105,7 +105,7 @@ export default function Testimonials() {
           })}
         </div>
 
-        <div className="mt-8 flex items-center justify-center gap-[38px] lg:mt-[56px]">
+        <div data-reveal="up" className="mt-8 flex items-center justify-center gap-[38px] lg:mt-[56px]">
           <button
             type="button"
             onClick={() => move(-1)}

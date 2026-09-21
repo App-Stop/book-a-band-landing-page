@@ -12,7 +12,7 @@ export default function Faqs() {
     <section id="contact" className="w-full bg-[#0c0b1a] border-t border-white/10 py-16 lg:pb-[103px] lg:pt-[181px]">
       <div className="page-x mx-auto w-full max-w-[1920px]">
         <div className="mx-auto grid w-full max-w-[1314px] grid-cols-1 gap-10 lg:grid-cols-[546px_minmax(0,653px)] lg:justify-between lg:gap-0">
-          <div className="lg:pt-[5px]">
+          <div data-reveal="left" className="lg:pt-[5px]">
             <h2 className="display text-[clamp(26px,2.5vw,48px)] leading-[1.21]">
               FAQs
             </h2>
@@ -28,7 +28,7 @@ export default function Faqs() {
             </a>
           </div>
 
-          <ul className="lg:-mt-[19px]">
+          <ul data-stagger="up" className="lg:-mt-[19px]">
             {faqs.map((faq, index) => {
               const isOpen = index === open;
 

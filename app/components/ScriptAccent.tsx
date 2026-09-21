@@ -8,6 +8,7 @@ export default function ScriptAccent({
 }) {
   return (
     <span
+      data-reveal="neon"
       className={`neon-script z-10 whitespace-nowrap normal-case leading-none tracking-normal ${className}`}
     >
       {children}

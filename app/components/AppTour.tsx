@@ -31,7 +31,7 @@ export default function AppTour() {
       <div className="@container relative mx-auto w-full max-w-[1920px]">
         <div className="relative grid grid-cols-1 items-start gap-12 px-5 sm:px-8 lg:block lg:px-0">
           <div className="min-w-0 lg:ml-[7.29%] lg:w-[42.14%]">
-            <h2 className="display relative text-[clamp(22px,3.334vw,64px)] uppercase leading-[1.25] lg:leading-[1.22]">
+            <h2 data-reveal="up" className="display relative text-[clamp(22px,3.334vw,64px)] uppercase leading-[1.25] lg:leading-[1.22]">
               <span className="block whitespace-nowrap">Explore the app</span>
               <span className="block whitespace-nowrap">That brings</span>
               {/* Figma: glow artwork is exported @2x — 858 × 430 at (165, -49) */}
@@ -46,13 +46,13 @@ export default function AppTour() {
               </span>
             </h2>
 
-            <p className="mt-6 max-w-[809px] text-base leading-[1.5] text-white lg:mt-[77px] lg:text-[max(16px,1.04cqw)]">
+            <p data-reveal="up" className="mt-6 max-w-[809px] text-base leading-[1.5] text-white lg:mt-[77px] lg:text-[max(16px,1.04cqw)]">
               Take an interactive tour through real app screens. Discover how
               Book a Band transforms event planning from chaotic phone calls
               into effortless instant bookings.
             </p>
 
-            <ul className="mt-8 lg:mt-[19px]">
+            <ul data-stagger="left" className="mt-8 lg:mt-[19px]">
               {appTourItems.map((item, index) => {
                 const isActive = index === active;
 
@@ -103,7 +103,7 @@ export default function AppTour() {
           </div>
 
           {/* Figma: phone + scan chip artwork is 545 × 873 at (1217, 1546) */}
-          <div className="relative mx-auto aspect-[1090/1746] w-full max-w-[320px] sm:max-w-[380px] lg:absolute lg:left-[63.39%] lg:top-[-6px] lg:mx-0 lg:w-[28.39%] lg:max-w-none">
+          <div data-reveal="right" data-parallax="0.06" className="relative mx-auto aspect-[1090/1746] w-full max-w-[320px] sm:max-w-[380px] lg:absolute lg:left-[63.39%] lg:top-[-6px] lg:mx-0 lg:w-[28.39%] lg:max-w-none">
             {appTourItems.map((item, index) => (
               <Image
                 key={item.image}

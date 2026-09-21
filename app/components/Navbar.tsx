@@ -36,7 +36,7 @@ export default function Navbar() {
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-3 pt-3 sm:px-4 sm:pt-4 lg:pt-[30px]">
       <div ref={wrapRef} className="relative w-full max-w-[712px]">
-        <nav className="glass pointer-events-auto flex w-full items-center justify-between gap-3 rounded-[60px] py-2.5 pl-4 pr-2.5 sm:gap-6 sm:py-3.5 sm:pl-[26px] sm:pr-3.5 lg:gap-[40px] lg:py-[10px] lg:pl-[27px] lg:pr-4 lg:leading-none">
+        <nav data-hero="nav" className="glass pointer-events-auto flex w-full items-center justify-between gap-3 rounded-[60px] py-2.5 pl-4 pr-2.5 sm:gap-6 sm:py-3.5 sm:pl-[26px] sm:pr-3.5 lg:gap-[40px] lg:py-[10px] lg:pl-[27px] lg:pr-4 lg:leading-none">
           <a
             href="#home"
             onClick={() => setOpen(false)}

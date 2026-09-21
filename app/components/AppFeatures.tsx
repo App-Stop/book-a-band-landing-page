@@ -43,6 +43,7 @@ export default function AppFeatures() {
             className="flex flex-col gap-10 lg:contents"
           >
             <div
+              data-reveal={feature.reversed ? "right" : "left"}
               className={`min-w-0 lg:absolute lg:w-[48%] ${layout[index].text} ${
                 feature.reversed ? "lg:pl-0" : ""
               }`}
@@ -95,6 +96,8 @@ export default function AppFeatures() {
             </div>
 
             <div
+              data-reveal={feature.reversed ? "left" : "right"}
+              data-parallax="0.05"
               className={`relative mx-auto w-full max-w-[440px] lg:absolute lg:mx-0 lg:max-w-none ${layout[index].image} ${
                 feature.imageWidth > 700 ? "max-w-[720px]" : ""
               }`}

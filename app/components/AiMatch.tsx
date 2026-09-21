@@ -2,7 +2,8 @@ import Image from "next/image";
 
 import Icon from "./Icon";
 import ScriptAccent from "./ScriptAccent";
-import { aiMatchSteps, matchedBands } from "./site-content";
+import MatchedBands from "./MatchedBands";
+import { aiMatchSteps } from "./site-content";
 
 export default function AiMatch() {
   return (
@@ -25,6 +26,8 @@ export default function AiMatch() {
         width={466}
         height={755}
         aria-hidden
+        data-reveal="fade"
+        data-parallax="0.1"
         className="pointer-events-none absolute left-[-6%] top-[10vw] hidden w-[24.3vw] max-w-[466px] select-none sm:block lg:left-[3.8%] lg:top-[3.1vw]"
       />
       <Image
@@ -33,12 +36,14 @@ export default function AiMatch() {
         width={384}
         height={672}
         aria-hidden
+        data-reveal="fade"
+        data-parallax="0.16"
         className="pointer-events-none absolute right-[-4%] top-[14vw] hidden w-[20vw] max-w-[384px] select-none sm:block lg:right-[2.9%] lg:top-[7.3vw]"
       />
 
       <div className="@container relative mx-auto w-full max-w-[1920px]">
         <div className="relative px-5 sm:px-8 lg:px-0">
-          <h2 className="display text-center text-[clamp(22px,3.334vw,64px)] uppercase leading-[1.25] lg:leading-[1.22] lg:pr-[11.56%]">
+          <h2 data-reveal="up" className="display text-center text-[clamp(22px,3.334vw,64px)] uppercase leading-[1.25] lg:leading-[1.22] lg:pr-[11.56%]">
             Let{" "}
             <span className="bg-gradient-to-r from-[#8b3dff] to-[#f472d0] bg-clip-text text-transparent">
               AI
@@ -52,7 +57,7 @@ export default function AiMatch() {
           </ScriptAccent>
 
           {/* Figma: 1308px panel, tucked under the band cards */}
-          <div className="relative mx-auto mt-10 grid w-full max-w-[1308px] grid-cols-1 gap-8 rounded-[30px] border border-[#662e69]/70 bg-[linear-gradient(135deg,rgba(45,15,125,0.32),rgba(20,10,40,0.05)_45%,rgba(95,15,105,0.28))] p-6 pb-24 backdrop-blur-md sm:grid-cols-2 lg:mt-[121px] lg:gap-[10px] lg:p-[30px] lg:pb-[90px]">
+          <div data-reveal="up" className="relative mx-auto mt-10 grid w-full max-w-[1308px] grid-cols-1 gap-8 rounded-[30px] border border-[#662e69]/70 bg-[linear-gradient(135deg,rgba(45,15,125,0.32),rgba(20,10,40,0.05)_45%,rgba(95,15,105,0.28))] p-6 pb-24 backdrop-blur-md sm:grid-cols-2 lg:mt-[121px] lg:gap-[10px] lg:p-[30px] lg:pb-[90px]">
             {aiMatchSteps.map((step, stepIndex) => (
               <div key={step.label}>
                 <span
@@ -108,73 +113,7 @@ export default function AiMatch() {
         </div>
 
         {/* Matched bands run edge to edge, exactly as in Figma (800 × 600). */}
-        <ul className="relative z-10 mt-8 flex snap-x snap-mandatory gap-[0.52%] overflow-x-auto pb-2 [scrollbar-width:none] lg:-mt-[57px] lg:overflow-visible lg:pb-0 [&::-webkit-scrollbar]:hidden">
-          {matchedBands.map((band) => (
-            <li
-              key={band.name}
-              className="relative aspect-[800/600] w-[86%] shrink-0 snap-start overflow-hidden rounded-[30px] sm:w-[60%] lg:w-[41.667%]"
-            >
-              <Image
-                src={band.image}
-                alt={`${band.name} performing live`}
-                fill
-                sizes="(max-width: 640px) 86vw, (max-width: 1024px) 60vw, 42vw"
-                className="object-cover"
-                style={{ objectPosition: band.imagePosition }}
-              />
-              <div className="absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-black/90 via-black/55 to-transparent" />
-
-              <div className="absolute inset-x-0 top-0 flex items-start justify-between gap-3 p-3.5 lg:p-[2.6%]">
-                <ul className="flex flex-wrap gap-2">
-                  {band.genres.map((genre) => (
-                    <li
-                      key={genre}
-                      className="rounded-full border border-white/25 bg-black/35 px-3 py-1.5 text-xs leading-[21px] backdrop-blur-md lg:px-3 lg:py-[9px] lg:text-sm"
-                    >
-                      {genre}
-                    </li>
-                  ))}
-                </ul>
-
-                <span className="flex shrink-0 items-center gap-1 rounded-full bg-gradient-to-r from-[#1400a6] to-[#6b00aa] px-3 py-1.5 text-xs font-semibold leading-[21px] lg:px-5 lg:py-2 lg:text-base">
-                  Matched
-                </span>
-              </div>
-
-              <div className="absolute inset-x-0 bottom-0 p-3.5 lg:p-[3.75%] lg:pb-[4.5%]">
-                <div className="flex items-end justify-between gap-4">
-                  <div className="min-w-0">
-                    <h3 className="text-base font-semibold lg:text-2xl lg:leading-[30px]">
-                      {band.name}
-                    </h3>
-
-                    <p className="mt-1.5 max-w-[520px] text-xs leading-[18px] text-white/80 lg:mt-1 lg:text-sm lg:leading-[22px]">
-                      {band.blurb}
-                    </p>
-
-                    <p className="mt-2 flex items-center gap-1.5 text-xs text-white/80 lg:mt-[7px] lg:text-sm">
-                      <Icon name="pin" className="size-4 lg:size-5" />
-                      {band.location}
-                    </p>
-                  </div>
-
-                  <div className="flex shrink-0 flex-col items-end">
-                    <p className="text-sm font-semibold lg:text-2xl lg:leading-[30px]">
-                      {band.price}
-                    </p>
-                    <p className="text-[10px] text-white/80 lg:text-base">/hr</p>
-                    <a
-                      href="#get-app"
-                      className="mt-2 rounded-full bg-gradient-to-b from-[#0300a6] to-[#ce00af] px-3.5 py-2 text-xs font-semibold transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] lg:mt-[10px] lg:px-5 lg:py-[10.5px] lg:text-base lg:leading-6"
-                    >
-                      Book in the App
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <MatchedBands />
       </div>
     </section>
   );

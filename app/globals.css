@@ -28,6 +28,16 @@ body {
   font-family: var(--font-body);
 }
 
+/* Pre-hydration state for GSAP-animated elements (see layout.tsx). */
+html.anim [data-hero],
+html.anim [data-reveal],
+html.anim [data-stagger] > * {
+  opacity: 0;
+}
+html.anim [data-word] {
+  opacity: 0.16;
+}
+
 /* Figma headings: Zalando Sans Expanded Black. */
 @utility display {
   font-family: var(--font-display);

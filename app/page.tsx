@@ -9,6 +9,7 @@ import Testimonials from "./components/Testimonials";
 import Faqs from "./components/Faqs";
 import CtaBanner from "./components/CtaBanner";
 import Footer from "./components/Footer";
+import ScrollAnimations from "./components/ScrollAnimations";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <Faqs />
       <CtaBanner />
       <Footer />
+      <ScrollAnimations />
     </main>
   );
 }

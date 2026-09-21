@@ -12,7 +12,7 @@ export default function CtaBanner() {
   return (
     <section className="@container w-full bg-[#0f0b21] border-t border-white/10 py-10 lg:pb-[56px] lg:pt-[70px]">
       <div className="mx-auto w-full max-w-[1920px] px-5 sm:px-8 lg:px-0">
-        <div className="relative mx-auto flex w-full flex-col gap-8 overflow-hidden rounded-[32px] p-6 sm:p-8 lg:ml-[7.29%] lg:block lg:aspect-[1640/711] lg:w-[85.42%] lg:gap-0 lg:rounded-[5.2cqw] lg:p-0">
+        <div data-reveal="scale" className="relative mx-auto flex w-full flex-col gap-8 overflow-hidden rounded-[32px] p-6 sm:p-8 lg:ml-[7.29%] lg:block lg:aspect-[1640/711] lg:w-[85.42%] lg:gap-0 lg:rounded-[5.2cqw] lg:p-0">
           <Image
             src="/band-stage.png"
             alt=""
@@ -65,7 +65,7 @@ export default function CtaBanner() {
           </div>
 
           {/* Figma: same phone artwork as the hero, cropped by the banner */}
-          <div className="relative mx-auto aspect-[1191/1708] w-full max-w-[300px] lg:absolute lg:left-[64.02%] lg:top-[-3.4%] lg:mx-0 lg:w-[32.68%] lg:max-w-none">
+          <div data-parallax="0.05" className="relative mx-auto aspect-[1191/1708] w-full max-w-[300px] lg:absolute lg:left-[64.02%] lg:top-[-3.4%] lg:mx-0 lg:w-[32.68%] lg:max-w-none">
             <Image
               src="/phones.png"
               alt="Book a Band app running on two iPhones"
