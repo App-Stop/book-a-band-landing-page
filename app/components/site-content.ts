@@ -67,7 +67,7 @@ export const aiMatchSteps = [
       "Outdoor festival",
       "Corporate gala",
     ],
-    accent: "#a855f7",
+    accent: "#00c9c6",
   },
   {
     icon: "notes",
@@ -78,7 +78,7 @@ export const aiMatchSteps = [
       "Smooth Jazz & Soul",
       "Top 40 Latin Pop",
     ],
-    accent: "#ff6f40",
+    accent: "#ff42dc",
   },
 ] as const;
 
@@ -96,17 +96,17 @@ export const matchedBands = [
   {
     name: "Andalusia Rhythms",
     price: "$750.00",
-    genres: ["Flamenco", "Rumba", "Cante Jondo"],
+    genres: ["Flamenco", "Bulería", "Cante Jondo"],
     blurb:
-      "Flamboyant performers delivering fiery guitar, heartfelt singing, and vibrant dance that capture the essence of Spanish culture.",
-    location: "Sevilla",
+      "Passionate performers delivering fiery guitar, heartfelt singing, and vibrant dance that captures the essence of Spanish culture.",
+    location: "Seville",
     image: "/hero-bg.png",
     imagePosition: "center 25%",
   },
   {
     name: "Rio de Janeiro Beat",
     price: "$690.00",
-    genres: ["Samba", "Bossa Nova", "Sambadrome"],
+    genres: ["Samba", "Bossa Nova", "Sambalanço"],
     blurb:
       "Energetic musicians combining rhythms and percussion for an unforgettable Brazilian fiesta atmosphere.",
     location: "Rio de Janeiro",
@@ -186,9 +186,9 @@ export const testimonials = [
   },
   {
     quote:
-      '"As a touring band we used to chase promoters for weeks. Now requests land in the app with the date, budget and venue already set, and the escrow payout clears right after the show."',
-    name: "Diego Herrera",
-    role: "Touring Musician • San Antonio, TX",
+      '"I was looking for a jazz ensemble for my wedding reception in New Orleans. Book a Band connected us with the Jazz All-Stars in no time. Their professionalism was unmatched, and the music created the perfect atmosphere for our big day!"',
+    name: "Emily Johnson",
+    role: "Corporate Event Organizer • San Francisco, CA",
     rating: 5,
   },
 ] as const;

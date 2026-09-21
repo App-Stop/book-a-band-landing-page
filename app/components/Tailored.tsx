@@ -3,31 +3,41 @@ import Image from "next/image";
 import ScriptAccent from "./ScriptAccent";
 import { tailoredCards } from "./site-content";
 
+/* Per-card top glow sampled from the Figma frame. */
+const glows = [
+  "radial-gradient(ellipse 90% 45% at 50% 0%, rgba(74,24,170,0.6), transparent 100%)",
+  "radial-gradient(ellipse 90% 45% at 50% 0%, rgba(30,120,150,0.6), transparent 100%)",
+  "radial-gradient(ellipse 90% 45% at 50% 0%, rgba(130,16,96,0.6), transparent 100%)",
+];
+
 export default function Tailored() {
   return (
     <section
       id="for-artists"
-      className="relative w-full overflow-hidden bg-[#0a0320] py-16 lg:py-[90px]"
+      className="relative w-full overflow-hidden py-16 lg:pb-[99px] lg:pt-[223px]"
     >
-      <div className="pointer-events-none absolute left-1/2 top-1/4 h-[700px] w-[1300px] -translate-x-1/2 bg-[radial-gradient(ellipse,rgba(140,40,210,0.32),transparent_70%)]" />
+      {/* Figma: broad violet bloom centred behind the heading */}
+      <div className="pointer-events-none absolute left-1/2 top-[6%] h-[900px] w-[1500px] -translate-x-1/2 bg-[radial-gradient(ellipse_at_center,rgba(110,20,170,0.5),transparent_66%)]" />
 
-      <div className="page-x relative mx-auto w-full max-w-[1920px]">
-        <h2 className="mx-auto max-w-[980px] text-center text-[clamp(28px,2.9vw,56px)] font-extrabold uppercase leading-[1.05] tracking-[0.04em]">
-          Tailored
-          <span className="mt-[0.08em] flex flex-wrap items-end justify-center gap-x-4 sm:flex-nowrap">
-            <span className="whitespace-nowrap">experiences for</span>
-            <ScriptAccent className="mb-[0.1em] text-[0.68em] tracking-normal">
-              hosts &amp; performers
-            </ScriptAccent>
-          </span>
-        </h2>
+      <div className="@container relative mx-auto w-full max-w-[1920px]">
+        <div className="relative px-5 sm:px-8 lg:px-0">
+          <h2 className="display text-center text-[clamp(22px,3.125vw,60px)] uppercase leading-[1.3] lg:pr-[15.4%]">
+            Tailored
+            <span className="block">experiences for</span>
+          </h2>
+          {/* Figma: script overlaps the end of the heading, x904 */}
+          <ScriptAccent className="mt-2 flex justify-center text-[clamp(30px,5.42vw,104px)] lg:absolute lg:left-[47.6%] lg:top-[6.2cqw] lg:mt-0 lg:block">
+            hosts &amp; performers
+          </ScriptAccent>
 
-        <div className="mx-auto mt-[clamp(56px,5vw,96px)] w-full max-w-[1640px] rounded-[24px] border border-white/10 bg-white/[0.03] p-5 backdrop-blur-md lg:p-[30px]">
-          <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-[30px]">
-            {tailoredCards.map((card) => (
+          <ul className="mx-auto mt-10 grid w-full grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-[125px] lg:ml-[7.29%] lg:w-[85.42%] lg:grid-cols-3 lg:gap-[19px]">
+            {tailoredCards.map((card, index) => (
               <li
                 key={card.title}
-                className="overflow-hidden rounded-[18px] bg-[#160a30] transition-transform duration-300 hover:-translate-y-1"
+                className="overflow-hidden rounded-[32px] border border-transparent transition-transform duration-300 hover:-translate-y-1"
+                style={{
+                  background: `${glows[index]} padding-box, linear-gradient(#141028,#141028) padding-box, linear-gradient(180deg,#883989,rgba(255,255,255,0.06) 60%) border-box`,
+                }}
               >
                 <div className="relative aspect-[1067/972] w-full">
                   <Image
@@ -39,11 +49,11 @@ export default function Tailored() {
                   />
                 </div>
 
-                <div className="p-4 lg:p-5">
-                  <h3 className="text-base font-semibold lg:text-lg">
+                <div className="px-5 pb-6 lg:px-[29px] lg:pb-[30px]">
+                  <h3 className="text-lg font-semibold lg:text-[23.7px] lg:leading-[30px]">
                     {card.title}
                   </h3>
-                  <p className="mt-2 text-[13px] leading-[19px] text-white/60 lg:text-sm lg:leading-5">
+                  <p className="mt-2 text-sm leading-5 text-white/80 lg:mt-[6px] lg:text-[15.5px] lg:leading-[22px]">
                     {card.body}
                   </p>
                 </div>
@@ -51,23 +61,23 @@ export default function Tailored() {
             ))}
           </ul>
 
-          <div className="mt-6 flex flex-col gap-5 lg:mt-[30px] lg:flex-row lg:items-center lg:justify-between lg:gap-10">
-            <p className="max-w-[540px] text-[13px] leading-[19px] text-white/70 lg:text-sm lg:leading-5">
+          <div className="mt-8 flex flex-col gap-5 px-0 lg:ml-[7.29%] lg:mt-[40px] lg:w-[85.42%] lg:flex-row lg:items-center lg:justify-between lg:gap-10">
+            <p className="max-w-[830px] text-base leading-6 text-white lg:text-[20.4px] lg:leading-[30px]">
               Whether you are curating entertainment for hundreds of wedding
               guests or a touring band booking your weekend gigs, Book a Band
               puts you in command.
             </p>
 
-            <div className="flex flex-wrap gap-3 lg:shrink-0">
+            <div className="flex flex-wrap gap-5 lg:shrink-0">
               <a
                 href="#get-app"
-                className="rounded-full bg-gradient-to-r from-[#0072ff] to-[#00c6ff] px-5 py-2.5 text-xs font-semibold transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] lg:text-sm"
+                className="rounded-full bg-gradient-to-b from-[#0072ff] to-[#00a3d9] px-6 py-3 text-sm font-semibold transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] lg:px-7 lg:py-[18px] lg:text-base lg:leading-6"
               >
                 Browse verified bands
               </a>
               <a
                 href="#for-artists"
-                className="rounded-full bg-gradient-to-r from-[#8b2bff] to-[#c400ff] px-5 py-2.5 text-xs font-semibold transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] lg:text-sm"
+                className="rounded-full bg-gradient-to-b from-[#5a00b8] to-[#a300a8] px-6 py-3 text-sm font-semibold transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] lg:px-7 lg:py-[18px] lg:text-base lg:leading-6"
               >
                 Sign up as a performer
               </a>

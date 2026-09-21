@@ -2,13 +2,16 @@ export default function IntroStatement() {
   return (
     <section
       id="about"
-      className="relative w-full bg-[#080219] py-14 lg:py-[72px]"
+      className="relative w-full py-14 lg:pb-[91px] lg:pt-[189px]"
     >
-      <div className="page-x mx-auto w-full max-w-[1920px]">
-        <p className="mx-auto max-w-[980px] text-center text-[clamp(22px,2.15vw,40px)] font-medium leading-[1.35] text-white">
+      {/* Figma: soft purple haze behind the statement */}
+      <div className="pointer-events-none absolute left-1/2 top-[8%] h-[520px] w-[1400px] max-w-full -translate-x-1/2 bg-[radial-gradient(ellipse_at_center,rgba(84,24,150,0.5),transparent_68%)]" />
+
+      <div className="page-x relative mx-auto w-full max-w-[1920px]">
+        <p className="mx-auto max-w-[1308px] text-[clamp(22px,2.34vw,45px)] font-normal leading-[1.26] text-white lg:text-left">
           Whether you are curating entertainment for hundreds of wedding guests
           or a touring band booking your weekend gigs,{" "}
-          <span className="bg-gradient-to-r from-[#ff42dc] to-[#c86bff] bg-clip-text font-bold text-transparent">
+          <span className="bg-gradient-to-r from-[#ff42dc] to-[#a240ff] bg-clip-text font-semibold text-transparent">
             Book a Band
           </span>{" "}
           puts you in command.

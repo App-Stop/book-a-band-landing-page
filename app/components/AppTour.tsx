@@ -24,110 +24,101 @@ export default function AppTour() {
   const current = appTourItems[active];
 
   return (
-    <section
-      id="features"
-      className="relative w-full overflow-hidden bg-[#0b031c] py-16 lg:py-[80px]"
-    >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(122,40,214,0.55),transparent_58%)]" />
+    <section id="features" className="relative w-full overflow-hidden py-16 lg:pb-[100px] lg:pt-[112px]">
+      {/* Figma: purple bloom on the right edge behind the phone */}
+      <div className="pointer-events-none absolute right-[-12%] top-[20%] h-[1000px] w-[900px] bg-[radial-gradient(ellipse_at_center,rgba(120,20,200,0.55),transparent_68%)]" />
 
-      <div className="page-x relative mx-auto grid w-full max-w-[1920px] grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(280px,0.85fr)] lg:gap-[60px]">
-        <div className="min-w-0">
-          <h2 className="overflow-visible text-[clamp(26px,2.85vw,52px)] font-extrabold uppercase leading-[0.95] tracking-[0.02em]">
-            <span className="block whitespace-nowrap">Explore the app</span>
-            {/* Glow PNG is 1716×859 — box is oversized like Sound so the script
-                sits beside THAT BRINGS instead of a tiny far-right scribble. */}
-            <span className="relative mt-[0.08em] inline-block whitespace-nowrap">
-              That brings
-              <span className="pointer-events-none absolute left-[82%] top-[-1.28em] z-10 h-[3.55em] w-[7.15em]">
+      <div className="@container relative mx-auto w-full max-w-[1920px]">
+        <div className="relative grid grid-cols-1 items-start gap-12 px-5 sm:px-8 lg:block lg:px-0">
+          <div className="min-w-0 lg:ml-[7.29%] lg:w-[42.14%]">
+            <h2 className="display relative text-[clamp(22px,3.125vw,60px)] uppercase leading-[1.3]">
+              <span className="block whitespace-nowrap">Explore the app</span>
+              <span className="block whitespace-nowrap">That brings</span>
+              {/* Figma: glow artwork is exported @2x — 858 × 430 at (165, -49) */}
+              <span className="pointer-events-none absolute left-[0.41em] top-[-1.017em] z-10 h-[7.17em] w-[14.3em]">
                 <Image
                   src="/live-music-home.png"
                   alt="Live music home"
                   fill
-                  sizes="(max-width: 1024px) 70vw, 420px"
-                  className="object-contain object-center mix-blend-screen"
+                  sizes="(max-width: 1024px) 90vw, 860px"
+                  className="object-fill mix-blend-screen"
                 />
               </span>
-            </span>
-          </h2>
+            </h2>
 
-          <p className="mt-6 max-w-[560px] text-sm leading-[22px] text-white/70 lg:mt-7 lg:text-[15px] lg:leading-[24px]">
-            Take an interactive tour through real app screens. Discover how Book
-            a Band transforms event planning from chaotic phone calls into
-            effortless instant bookings.
-          </p>
+            <p className="mt-6 max-w-[809px] text-base leading-[1.5] text-white lg:mt-[77px] lg:text-[max(16px,1.04cqw)]">
+              Take an interactive tour through real app screens. Discover how
+              Book a Band transforms event planning from chaotic phone calls
+              into effortless instant bookings.
+            </p>
 
-          <ul className="mt-8 max-w-[720px] lg:mt-10">
-            {appTourItems.map((item, index) => {
-              const isActive = index === active;
+            <ul className="mt-8 lg:mt-[19px]">
+              {appTourItems.map((item, index) => {
+                const isActive = index === active;
 
-              return (
-                <li key={item.title} className="relative">
-                  <button
-                    type="button"
-                    onClick={() => setActive(index)}
-                    aria-current={isActive ? "true" : undefined}
-                    className={`flex w-full items-start gap-3.5 py-4 pr-3 text-left transition-colors duration-500 lg:gap-4 lg:py-[18px] ${
-                      isActive
-                        ? "bg-[linear-gradient(90deg,rgba(162,64,255,0.42)_0%,rgba(162,64,255,0.12)_42%,transparent_100%)]"
-                        : "hover:bg-white/[0.03]"
-                    }`}
-                  >
-                    <span
-                      className={`mt-0.5 grid size-8 shrink-0 place-items-center rounded-full transition-colors duration-500 lg:size-9 ${
+                return (
+                  <li key={item.title} className="relative">
+                    <button
+                      type="button"
+                      onClick={() => setActive(index)}
+                      aria-current={isActive ? "true" : undefined}
+                      className={`flex w-full items-center gap-4 py-5 pr-3 text-left transition-colors duration-500 lg:gap-[1.1cqw] lg:pb-[22px] lg:pt-[39px] lg:pr-0 ${
                         isActive
-                          ? "bg-gradient-to-br from-[#a240ff] to-[#7c3aed] text-white"
-                          : "bg-[#1a102e] text-white/55"
+                          ? "bg-[radial-gradient(ellipse_75%_100%_at_15%_100%,rgba(150,0,175,0.75),rgba(90,0,120,0.35)_50%,transparent_100%)]"
+                          : "hover:bg-white/[0.03]"
                       }`}
                     >
-                      <Icon name={item.icon} className="size-4" />
-                    </span>
-
-                    <span className="min-w-0 pt-0.5">
                       <span
-                        className={`block text-[15px] font-semibold leading-snug lg:text-base ${
-                          isActive ? "text-[#c9a6ff]" : "text-white/90"
+                        className={`grid size-12 shrink-0 place-items-center rounded-[14px] transition-colors duration-500 lg:size-[3.125cqw] lg:rounded-[0.83cqw] ${
+                          isActive
+                            ? "bg-gradient-to-br from-[#5e00a8] to-[#a800ab] text-white shadow-[0_8px_24px_rgba(168,0,171,0.35)]"
+                            : "border border-white/[0.06] bg-[#151129] text-white"
                         }`}
                       >
-                        {item.title}
+                        <Icon name={item.icon} className="size-6 lg:size-[1.45cqw]" />
                       </span>
-                      <span className="mt-1 block max-w-[520px] text-[13px] leading-[19px] text-white/55 lg:text-[13.5px] lg:leading-5">
-                        {item.body}
+
+                      <span className="min-w-0">
+                        <span className="block text-lg font-semibold leading-tight text-white lg:text-[max(18px,1.25cqw)] lg:leading-[1.25]">
+                          {item.title}
+                        </span>
+                        <span className="mt-1 block text-sm leading-[1.4] text-white/80 lg:text-[max(14px,0.83cqw)] lg:leading-[22px]">
+                          {item.body}
+                        </span>
                       </span>
+                    </button>
+
+                    <span className="absolute inset-x-0 bottom-0 h-[2px] overflow-hidden bg-[#252431]">
+                      {isActive && (
+                        <span
+                          key={active}
+                          className="animate-tour-progress block h-full w-full bg-[#d3d3d6]"
+                        />
+                      )}
                     </span>
-                  </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
 
-                  <span className="absolute inset-x-0 bottom-0 h-px overflow-hidden bg-white/[0.08]">
-                    {isActive && (
-                      <span
-                        key={active}
-                        className="animate-tour-progress block h-full w-full bg-gradient-to-r from-[#a240ff] via-[#ff42dc] to-transparent"
-                      />
-                    )}
-                  </span>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-
-        {/* Phone screenshot follows the active listing (Figma: ~410px). */}
-        <div className="relative mx-auto aspect-[502/1024] w-full max-w-[280px] sm:max-w-[340px] lg:mx-0 lg:ml-auto lg:max-w-[410px]">
-          {appTourItems.map((item, index) => (
-            <Image
-              key={item.image}
-              src={item.image}
-              alt={item.imageAlt}
-              fill
-              sizes="(max-width: 1024px) 70vw, 410px"
-              priority={index === 0}
-              className={`object-contain object-center drop-shadow-[0_40px_80px_rgba(80,0,160,0.45)] transition-opacity duration-700 ${
-                index === active
-                  ? "z-10 opacity-100"
-                  : "z-0 opacity-0"
-              }`}
-            />
-          ))}
-          <span className="sr-only">{current.imageAlt}</span>
+          {/* Figma: phone + scan chip artwork is 545 × 873 at (1217, 1546) */}
+          <div className="relative mx-auto aspect-[1090/1746] w-full max-w-[320px] sm:max-w-[380px] lg:absolute lg:left-[63.39%] lg:top-[-6px] lg:mx-0 lg:w-[28.39%] lg:max-w-none">
+            {appTourItems.map((item, index) => (
+              <Image
+                key={item.image}
+                src={item.image}
+                alt={item.imageAlt}
+                fill
+                sizes="(max-width: 1024px) 70vw, 545px"
+                priority={index === 0}
+                className={`object-contain object-center transition-opacity duration-700 ${
+                  index === active ? "z-10 opacity-100" : "z-0 opacity-0"
+                }`}
+              />
+            ))}
+            <span className="sr-only">{current.imageAlt}</span>
+          </div>
         </div>
       </div>
     </section>

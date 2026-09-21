@@ -1,4 +1,4 @@
-/** Figma neon handwriting that sits beside — not on top of — a heading line. */
+/** Figma neon handwriting that overlaps the last line of a heading. */
 export default function ScriptAccent({
   children,
   className = "",
@@ -8,7 +8,7 @@ export default function ScriptAccent({
 }) {
   return (
     <span
-      className={`neon-script inline-block shrink-0 whitespace-nowrap normal-case leading-none ${className}`}
+      className={`neon-script z-10 whitespace-nowrap normal-case leading-none tracking-normal ${className}`}
     >
       {children}
     </span>

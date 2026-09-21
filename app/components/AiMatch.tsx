@@ -8,45 +8,43 @@ export default function AiMatch() {
   return (
     <section
       id="ai-match"
-      className="relative w-full overflow-hidden bg-[#0a0320] py-16 lg:py-[90px]"
+      className="relative w-full overflow-hidden py-16 lg:pb-0 lg:pt-[123px]"
     >
-      <div className="pointer-events-none absolute left-1/2 top-0 h-[700px] w-[1200px] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(120,40,200,0.35),transparent_70%)]" />
+      {/* Figma: violet bloom behind the heading, deeper glow to the left */}
+      <div className="pointer-events-none absolute left-[-10%] top-[10%] h-[900px] w-[1100px] bg-[radial-gradient(ellipse_at_center,rgba(90,30,190,0.5),transparent_66%)]" />
+      <div className="pointer-events-none absolute right-[-15%] top-[45%] h-[800px] w-[900px] bg-[radial-gradient(ellipse_at_center,rgba(120,20,190,0.4),transparent_66%)]" />
 
-      <div className="relative">
-        <div className="page-x mx-auto w-full max-w-[1920px]">
-          <h2 className="mx-auto max-w-[980px] text-center text-[clamp(28px,2.9vw,56px)] font-extrabold uppercase leading-[1.05] tracking-[0.04em]">
+      <div className="@container relative mx-auto w-full max-w-[1920px]">
+        <div className="relative px-5 sm:px-8 lg:px-0">
+          <h2 className="display text-center text-[clamp(22px,3.125vw,60px)] uppercase leading-[1.3] lg:pr-[11.56%]">
             Let{" "}
-            <span className="bg-gradient-to-r from-[#8b5cf6] to-[#f472d0] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#8b3dff] to-[#f472d0] bg-clip-text text-transparent">
               AI
             </span>{" "}
             pick the
-            <span className="mt-[0.08em] flex flex-wrap items-end justify-center gap-x-4 sm:flex-nowrap">
-              <span className="whitespace-nowrap">best bands</span>
-              <ScriptAccent className="mb-[0.1em] text-[0.7em] tracking-normal">
-                For your events
-              </ScriptAccent>
-            </span>
+            <span className="block">best bands</span>
           </h2>
+          {/* Figma: script sits under "BANDS", x880 y2760 */}
+          <ScriptAccent className="mt-2 flex justify-center text-[clamp(30px,5.83vw,112px)] lg:absolute lg:left-[46.1%] lg:top-[6.9cqw] lg:mt-0 lg:block">
+            For your events
+          </ScriptAccent>
 
-          {/* Figma: 1330px glass panel with the two match steps */}
-          <div className="mx-auto mt-[clamp(56px,5vw,96px)] grid w-full max-w-[1330px] grid-cols-1 gap-8 rounded-[20px] border border-white/10 bg-white/[0.03] p-6 backdrop-blur-md sm:grid-cols-2 lg:gap-[60px] lg:p-[30px]">
+          {/* Figma: 1308px panel, tucked under the band cards */}
+          <div className="relative mx-auto mt-10 grid w-full max-w-[1308px] grid-cols-1 gap-8 rounded-[30px] border border-[#662e69]/70 bg-[linear-gradient(135deg,rgba(45,15,125,0.32),rgba(20,10,40,0.05)_45%,rgba(95,15,105,0.28))] p-6 pb-24 backdrop-blur-md sm:grid-cols-2 lg:mt-[121px] lg:gap-[10px] lg:p-[30px] lg:pb-[90px]">
             {aiMatchSteps.map((step, stepIndex) => (
               <div key={step.label}>
                 <span
-                  className="grid size-9 place-items-center rounded-lg"
-                  style={{
-                    color: step.accent,
-                    backgroundColor: `${step.accent}1f`,
-                  }}
+                  className="grid size-[60px] place-items-center"
+                  style={{ color: step.accent }}
                 >
-                  <Icon name={step.icon} className="size-5" />
+                  <Icon name={step.icon} className="size-[72px]" />
                 </span>
 
-                <p className="mt-3.5 text-sm font-semibold lg:text-base">
+                <p className="mt-4 text-xl font-semibold lg:text-2xl lg:leading-[30px]">
                   {step.label}
                 </p>
 
-                <ul className="mt-3 flex flex-wrap gap-2">
+                <ul className="mt-[15px] flex flex-wrap gap-[9px]">
                   {step.options.map((option, optionIndex) => {
                     const isActive = optionIndex === 0;
 
@@ -54,17 +52,19 @@ export default function AiMatch() {
                       <li key={option}>
                         <button
                           type="button"
-                          className="rounded-full border px-3 py-1.5 text-[11px] leading-none transition-colors duration-200 lg:text-xs"
+                          className="rounded-full border px-4 py-2 text-sm leading-[21px] transition-colors duration-200 lg:py-[9px] lg:text-base"
                           style={
                             isActive
                               ? {
                                   borderColor: step.accent,
                                   color: step.accent,
                                   backgroundColor: `${step.accent}1a`,
+                                  fontWeight: 600,
                                 }
                               : {
-                                  borderColor: "rgba(255,255,255,0.16)",
-                                  color: "rgba(255,255,255,0.7)",
+                                  borderColor: "rgba(255,255,255,0.1)",
+                                  backgroundColor: "#16112b",
+                                  color: "rgba(255,255,255,0.9)",
                                 }
                           }
                         >
@@ -85,12 +85,12 @@ export default function AiMatch() {
           </div>
         </div>
 
-        {/* Matched bands run edge to edge, exactly as in Figma. */}
-        <ul className="mt-[clamp(32px,3vw,54px)] flex snap-x snap-mandatory gap-2 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        {/* Matched bands run edge to edge, exactly as in Figma (800 × 600). */}
+        <ul className="relative z-10 mt-8 flex snap-x snap-mandatory gap-[0.52%] overflow-x-auto pb-2 [scrollbar-width:none] lg:-mt-[57px] lg:overflow-visible lg:pb-0 [&::-webkit-scrollbar]:hidden">
           {matchedBands.map((band) => (
             <li
               key={band.name}
-              className="relative aspect-[800/633] w-[86vw] shrink-0 snap-start overflow-hidden sm:w-[60vw] lg:w-[41.6vw]"
+              className="relative aspect-[800/600] w-[86%] shrink-0 snap-start overflow-hidden rounded-[30px] sm:w-[60%] lg:w-[41.667%]"
             >
               <Image
                 src={band.image}
@@ -100,54 +100,54 @@ export default function AiMatch() {
                 className="object-cover"
                 style={{ objectPosition: band.imagePosition }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/40" />
+              <div className="absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-black/90 via-black/55 to-transparent" />
 
-              <div className="absolute inset-x-0 top-0 flex items-start justify-between gap-3 p-3.5 lg:p-5">
-                <ul className="flex flex-wrap gap-1.5">
+              <div className="absolute inset-x-0 top-0 flex items-start justify-between gap-3 p-3.5 lg:p-[2.6%]">
+                <ul className="flex flex-wrap gap-2">
                   {band.genres.map((genre) => (
                     <li
                       key={genre}
-                      className="rounded-md bg-black/55 px-2 py-1 text-[10px] uppercase leading-none tracking-wide backdrop-blur-sm lg:text-[11px]"
+                      className="rounded-full border border-white/25 bg-black/35 px-3 py-1.5 text-xs leading-[21px] backdrop-blur-md lg:px-3 lg:py-[9px] lg:text-sm"
                     >
                       {genre}
                     </li>
                   ))}
                 </ul>
 
-                <span className="flex shrink-0 items-center gap-1 rounded-md bg-gradient-to-r from-[#a240ff] to-[#ff42dc] px-2.5 py-1 text-[10px] font-semibold uppercase leading-none lg:text-[11px]">
+                <span className="flex shrink-0 items-center gap-1 rounded-full bg-gradient-to-r from-[#1400a6] to-[#6b00aa] px-3 py-1.5 text-xs font-semibold leading-[21px] lg:px-5 lg:py-2 lg:text-base">
                   Matched
                 </span>
               </div>
 
-              <div className="absolute inset-x-0 bottom-0 p-3.5 lg:p-5">
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-base font-bold lg:text-xl">
-                    {band.name}
-                  </h3>
-                  <p className="shrink-0 text-right text-sm font-bold lg:text-lg">
-                    {band.price}
-                    <span className="block text-[10px] font-normal text-white/60 lg:text-xs">
-                      /hr
-                    </span>
-                  </p>
-                </div>
+              <div className="absolute inset-x-0 bottom-0 p-3.5 lg:p-[3.75%] lg:pb-[4.5%]">
+                <div className="flex items-end justify-between gap-4">
+                  <div className="min-w-0">
+                    <h3 className="text-base font-semibold lg:text-2xl lg:leading-[30px]">
+                      {band.name}
+                    </h3>
 
-                <p className="mt-1.5 max-w-[62%] text-[11px] leading-[16px] text-white/70 lg:text-[13px] lg:leading-[19px]">
-                  {band.blurb}
-                </p>
+                    <p className="mt-1.5 max-w-[520px] text-xs leading-[18px] text-white/80 lg:mt-1 lg:text-sm lg:leading-[22px]">
+                      {band.blurb}
+                    </p>
 
-                <div className="mt-2.5 flex items-end justify-between gap-4 lg:mt-4">
-                  <p className="flex items-center gap-1 text-[11px] text-white/70 lg:text-xs">
-                    <Icon name="pin" className="size-3.5" />
-                    {band.location}
-                  </p>
+                    <p className="mt-2 flex items-center gap-1.5 text-xs text-white/80 lg:mt-[7px] lg:text-sm">
+                      <Icon name="pin" className="size-4 lg:size-5" />
+                      {band.location}
+                    </p>
+                  </div>
 
-                  <a
-                    href="#get-app"
-                    className="rounded-full bg-gradient-to-r from-[#8b2bff] to-[#c400ff] px-3.5 py-2 text-[11px] font-semibold transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] lg:px-5 lg:py-2.5 lg:text-xs"
-                  >
-                    Book in the App
-                  </a>
+                  <div className="flex shrink-0 flex-col items-end">
+                    <p className="text-sm font-semibold lg:text-2xl lg:leading-[30px]">
+                      {band.price}
+                    </p>
+                    <p className="text-[10px] text-white/80 lg:text-base">/hr</p>
+                    <a
+                      href="#get-app"
+                      className="mt-2 rounded-full bg-gradient-to-b from-[#0300a6] to-[#ce00af] px-3.5 py-2 text-xs font-semibold transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] lg:mt-[10px] lg:px-5 lg:py-[10.5px] lg:text-base lg:leading-6"
+                    >
+                      Book in the App
+                    </a>
+                  </div>
                 </div>
               </div>
             </li>

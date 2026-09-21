@@ -12,13 +12,13 @@ const socials: { name: IconName; label: string }[] = [
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#05010f] pb-8 pt-6 lg:pb-10">
+    <footer className="@container w-full pb-8 pt-6 lg:pb-[47px] lg:pt-[62px]">
       <div className="page-x mx-auto w-full max-w-[1920px]">
-        <p className="overflow-hidden text-center text-[clamp(32px,7.2vw,150px)] font-extrabold uppercase leading-none tracking-[0.01em] text-[#2c1256] sm:whitespace-nowrap">
+        <p className="display text-center text-[clamp(28px,9.34vw,179px)] uppercase leading-none tracking-[0.03em] text-[#2c1e48] sm:whitespace-nowrap">
           Book a Band
         </p>
 
-        <ul className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-xs text-white/80 lg:mt-10 lg:gap-x-[clamp(40px,7vw,130px)] lg:text-sm">
+        <ul className="mt-6 grid grid-cols-2 items-center gap-y-3 text-center text-sm text-white sm:grid-cols-3 lg:mt-[60px] lg:grid-cols-5 lg:text-[max(14px,1.04cqw)]">
           {footerLinks.map(({ label, href }) => (
             <li key={label}>
               <Link
@@ -31,29 +31,29 @@ export default function Footer() {
           ))}
         </ul>
 
-        <div className="mt-6 flex flex-col items-center gap-5 border-t border-white/[0.06] pt-5 text-[11px] text-white/45 lg:mt-8 lg:grid lg:grid-cols-3 lg:items-center lg:text-xs">
-          <p className="lg:justify-self-start">
+        <div className="mt-6 flex flex-col items-center gap-5 border-t border-white/[0.08] pt-5 text-xs text-white/50 lg:mt-[62px] lg:flex lg:flex-row lg:items-center lg:justify-between lg:pt-[42px] lg:text-[max(12px,0.73cqw)]">
+          <p>
             © 2026 Book a Band Inc. All rights reserved.
           </p>
 
-          <ul className="flex items-center gap-4 lg:justify-self-center">
+          <ul className="flex items-center gap-4 lg:gap-[2.6cqw]">
             {socials.map(({ name, label }) => (
               <li key={label}>
                 <a
                   href="#social"
                   aria-label={label}
-                  className="block text-white/50 transition-colors duration-200 hover:text-white"
+                  className="block text-white/80 transition-colors duration-200 hover:text-white"
                 >
-                  <Icon name={name} className="size-[18px]" />
+                  <Icon name={name} className="size-[18px] lg:size-[1.2cqw]" />
                 </a>
               </li>
             ))}
           </ul>
 
-          <p className="flex items-center gap-2 lg:justify-self-end">
+          <p className="flex items-center gap-2">
             {legalLinks.map(({ label, href }, index) => (
               <span key={label} className="flex items-center gap-2">
-                {index > 0 && <span className="text-white/25">|</span>}
+                {index > 0 && <span className="text-white/30">|</span>}
                 <Link
                   href={href}
                   className="transition-colors duration-200 hover:text-white"

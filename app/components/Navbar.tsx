@@ -4,8 +4,8 @@ import { navLinks } from "./site-content";
 
 export default function Navbar() {
   return (
-    <header className="relative z-30 flex justify-center pt-4 sm:pt-6 lg:pt-[30px]">
-      <nav className="glass flex w-full max-w-[720px] items-center justify-between gap-3 rounded-[60px] py-2.5 pl-4 pr-2.5 sm:gap-6 sm:py-3.5 sm:pl-[26px] sm:pr-3.5 lg:gap-[60px]">
+    <header className="relative z-30 flex justify-center pt-4 sm:pt-6 lg:pt-[1.56cqw]">
+      <nav className="glass flex w-full max-w-[712px] items-center justify-between gap-3 rounded-[60px] py-2.5 pl-4 pr-2.5 sm:gap-6 sm:py-3.5 sm:pl-[26px] sm:pr-3.5 lg:gap-[40px] lg:py-[10px] lg:pl-[27px] lg:pr-4 lg:leading-none">
         <a href="#home" className="flex shrink-0 items-center">
           <Image
             src="/logo.png"
@@ -17,7 +17,7 @@ export default function Navbar() {
           />
         </a>
 
-        <ul className="hidden items-center gap-4 text-sm leading-normal md:flex lg:gap-6">
+        <ul className="hidden items-center gap-4 text-sm leading-normal md:flex lg:gap-6 lg:text-base">
           {navLinks.map(({ label, href }) => (
             <li key={label}>
               <a
@@ -33,7 +33,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2 sm:gap-2.5">
           <button
             type="button"
-            className="glass hidden items-center gap-1.5 rounded-[20px] py-2 pl-2 pr-3.5 text-sm transition-opacity duration-200 hover:opacity-80 sm:flex"
+            className="glass hidden items-center gap-1.5 rounded-[20px] py-2 pl-2 pr-3.5 text-sm transition-opacity lg:text-base duration-200 hover:opacity-80 sm:flex"
           >
             <Image
               src="/globe.svg"
@@ -47,7 +47,7 @@ export default function Navbar() {
 
           <a
             href="#get-app"
-            className="rounded-full border border-white/10 bg-gradient-to-b from-[#0300a6] to-[#ce00af] px-4 py-2.5 text-xs font-semibold shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] sm:px-5 sm:py-3 sm:text-sm"
+            className="rounded-full border border-white/10 bg-gradient-to-b from-[#0300a6] to-[#ce00af] px-4 py-2.5 text-xs font-semibold shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] sm:px-5 sm:py-3 sm:text-sm lg:px-[17px] lg:py-[10px] lg:text-base"
           >
             Get the App
           </a>

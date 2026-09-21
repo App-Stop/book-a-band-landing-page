@@ -3,11 +3,16 @@ import Image from "next/image";
 import ScriptAccent from "./ScriptAccent";
 import { storeLinks } from "./site-content";
 
+/*
+ * Figma banner: 1640 × 711 at (140, 9842). On lg+ children are placed with
+ * percentages of the banner (x / 1640, y / 711); type is sized against the
+ * 1920 frame via container units.
+ */
 export default function CtaBanner() {
   return (
-    <section className="w-full bg-[#05010f] pb-4 lg:pb-6">
-      <div className="page-x mx-auto w-full max-w-[1920px]">
-        <div className="relative mx-auto w-full max-w-[1640px] overflow-hidden rounded-[24px]">
+    <section className="@container w-full pb-4 lg:pb-0">
+      <div className="mx-auto w-full max-w-[1920px] px-5 sm:px-8 lg:px-0">
+        <div className="relative mx-auto flex w-full flex-col gap-8 overflow-hidden rounded-[32px] p-6 sm:p-8 lg:ml-[7.29%] lg:block lg:aspect-[1640/711] lg:w-[85.42%] lg:gap-0 lg:rounded-[5.2cqw] lg:p-0">
           <Image
             src="/band-stage.png"
             alt=""
@@ -15,74 +20,59 @@ export default function CtaBanner() {
             sizes="(max-width: 1024px) 100vw, 1640px"
             className="object-cover object-[center_40%]"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(38,8,66,0.94)_0%,rgba(60,12,104,0.78)_45%,rgba(90,20,140,0.55)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(50,10,74,0.92)_0%,rgba(58,12,92,0.82)_55%,rgba(66,16,104,0.72)_100%)]" />
 
-          <div className="relative grid grid-cols-1 items-center gap-8 p-6 sm:p-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(260px,380px)] lg:gap-8 lg:p-[60px]">
-            <div>
-              <h2 className="text-[clamp(22px,2.15vw,42px)] font-extrabold uppercase leading-[1.05] tracking-[0.02em]">
-                Ready to bring
-                <span className="relative mt-[0.08em] inline-block whitespace-nowrap">
-                  live music to your
-                  <ScriptAccent className="absolute left-full top-[0.02em] ml-[0.18em] text-[0.7em] tracking-normal">
-                    next event?
-                  </ScriptAccent>
-                </span>
-              </h2>
+          <h2 className="display relative text-[clamp(22px,3.125vw,60px)] uppercase leading-[1.3] lg:absolute lg:left-[6.16%] lg:top-[13.92%]">
+            Ready to bring
+            <span className="block whitespace-nowrap">live music to your</span>
+          </h2>
 
-              <p className="mt-[clamp(28px,3vw,54px)] max-w-[470px] text-[13px] leading-[19px] text-white/80 lg:text-sm lg:leading-[21px]">
-                Download Book a Band on iOS and Android. Find your sound, match
-                with vetted local talent, and make memories that last a
-                lifetime.
-              </p>
+          <ScriptAccent className="relative text-[clamp(30px,7.45vw,143px)] lg:absolute lg:left-[39.02%] lg:top-[27.5%]">
+            next event?
+          </ScriptAccent>
 
-              <div className="mt-6 flex items-center gap-5 lg:gap-6">
-                <Image
-                  src="/qr.png"
-                  alt="Scan to download the Book a Band app"
-                  width={148}
-                  height={148}
-                  className="size-[86px] rounded-[12px] object-cover lg:size-[104px] lg:rounded-[14px]"
-                />
+          <p className="relative max-w-[780px] text-base leading-6 text-white lg:absolute lg:left-[6.16%] lg:top-[46.55%] lg:text-[max(16px,1.04cqw)] lg:leading-[1.5]">
+            Download Book a Band on iOS and Android. Find your sound, match with
+            vetted local talent, and make memories that last a lifetime.
+          </p>
 
-                <div className="flex flex-col gap-3 lg:gap-4">
-                  {storeLinks.map(({ src, alt, href }) => (
-                    <a
-                      key={alt}
-                      href={href}
-                      className="transition-transform duration-200 hover:-translate-y-0.5 active:translate-y-0"
-                    >
-                      <Image
-                        src={src}
-                        alt={alt}
-                        width={162}
-                        height={60}
-                        className="h-[40px] w-[108px] object-contain lg:h-[46px] lg:w-[124px]"
-                      />
-                    </a>
-                  ))}
-                </div>
-              </div>
+          <div className="relative flex items-center gap-5 lg:absolute lg:left-[6.16%] lg:top-[63.43%] lg:gap-[2.08cqw]">
+            <Image
+              src="/qr.png"
+              alt="Scan to download the Book a Band app"
+              width={148}
+              height={148}
+              className="size-[104px] rounded-[14px] object-cover lg:size-[8.54cqw] lg:rounded-[1cqw]"
+            />
+
+            <div className="flex flex-col gap-3 lg:gap-[1.3cqw]">
+              {storeLinks.map(({ src, alt, href }) => (
+                <a
+                  key={alt}
+                  href={href}
+                  className="transition-transform duration-200 hover:-translate-y-0.5 active:translate-y-0"
+                >
+                  <Image
+                    src={src}
+                    alt={alt}
+                    width={162}
+                    height={60}
+                    className="h-[46px] w-[124px] object-contain lg:h-[3.44cqw] lg:w-[9.32cqw]"
+                  />
+                </a>
+              ))}
             </div>
+          </div>
 
-            {/* Figma: the phone pair is cropped by the banner's bottom edge. */}
-            <div className="relative mx-auto h-[300px] w-full max-w-[380px] lg:h-[420px] lg:max-w-[420px]">
-              <Image
-                src="/app-profile-tilt.png"
-                alt=""
-                width={601}
-                height={988}
-                sizes="320px"
-                className="absolute -right-4 top-6 h-auto w-[58%] rotate-[8deg] object-contain opacity-95 lg:top-10"
-              />
-              <Image
-                src="/app-discover.png"
-                alt="Book a Band discover screen"
-                width={956}
-                height={1424}
-                sizes="380px"
-                className="absolute left-0 top-0 h-auto w-[72%] object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.45)]"
-              />
-            </div>
+          {/* Figma: same phone artwork as the hero, cropped by the banner */}
+          <div className="relative mx-auto aspect-[1191/1708] w-full max-w-[300px] lg:absolute lg:left-[64.02%] lg:top-[-3.4%] lg:mx-0 lg:w-[32.68%] lg:max-w-none">
+            <Image
+              src="/phones.png"
+              alt="Book a Band app running on two iPhones"
+              fill
+              sizes="(max-width: 1024px) 80vw, 540px"
+              className="object-contain object-center"
+            />
           </div>
         </div>
       </div>
