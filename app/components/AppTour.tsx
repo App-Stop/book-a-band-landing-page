@@ -66,14 +66,19 @@ export default function AppTour() {
                       type="button"
                       onClick={() => setActive(index)}
                       aria-current={isActive ? "true" : undefined}
-                      className={`flex w-full items-center gap-4 py-5 pr-3 text-left transition-colors duration-500 lg:gap-[1.1cqw] lg:pb-[22px] lg:pt-[39px] lg:pr-0 short:pb-[8px] short:pt-[12px] ${
-                        isActive
-                          ? "bg-[radial-gradient(ellipse_75%_100%_at_15%_100%,rgba(150,0,175,0.75),rgba(90,0,120,0.35)_50%,transparent_100%)]"
-                          : "hover:bg-white/[0.03]"
+                      className={`relative flex w-full items-center gap-4 py-5 pr-3 text-left transition-colors duration-500 lg:gap-[1.1cqw] lg:pb-[22px] lg:pt-[39px] lg:pr-0 short:pb-[8px] short:pt-[12px] ${
+                        isActive ? "" : "hover:bg-white/[0.03]"
                       }`}
                     >
+                      {isActive && (
+                        <span
+                          aria-hidden
+                          className="pointer-events-none absolute inset-x-2 inset-y-1 rounded-2xl bg-[radial-gradient(ellipse_60%_85%_at_30%_85%,rgba(150,0,175,0.45),rgba(90,0,120,0.2)_40%,transparent_75%)] lg:inset-x-[0.6cqw] lg:rounded-[1.1cqw]"
+                        />
+                      )}
+
                       <span
-                        className={`grid size-12 shrink-0 place-items-center rounded-[14px] transition-colors duration-500 lg:size-[3.125cqw] lg:rounded-[0.83cqw] ${
+                        className={`relative grid size-12 shrink-0 place-items-center rounded-[14px] transition-colors duration-500 lg:size-[3.125cqw] lg:rounded-[0.83cqw] ${
                           isActive
                             ? "bg-gradient-to-br from-[#5e00a8] to-[#a800ab] text-white shadow-[0_8px_24px_rgba(168,0,171,0.35)]"
                             : "border border-white/[0.06] bg-[#151129] text-white"
@@ -82,7 +87,7 @@ export default function AppTour() {
                         <Icon name={item.icon} className="size-6 lg:size-[1.45cqw]" />
                       </span>
 
-                      <span className="min-w-0">
+                      <span className="relative min-w-0">
                         <span className="block text-lg font-semibold leading-tight text-white lg:text-[max(18px,1.25cqw)] lg:leading-[1.25]">
                           {item.title}
                         </span>
@@ -92,7 +97,7 @@ export default function AppTour() {
                       </span>
                     </button>
 
-                    <span className="absolute inset-x-0 bottom-0 h-[2px] overflow-hidden bg-[#252431]">
+                    <span className="absolute inset-x-2 bottom-0 h-[2px] overflow-hidden rounded-full bg-[#252431] lg:inset-x-[0.6cqw]">
                       {isActive && (
                         <span
                           key={active}
