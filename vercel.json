@@ -1,11 +1,13 @@
 {
   "framework": "nextjs",
   "buildCommand": "npm run build",
-
   "redirects": [
     {
       "source": "/:path*",
-      "destination": "https://bookaband.surge.sh/#",
+      "has": [
+        { "type": "host", "value": "book-a-band-landing-page.vercel.app" }
+      ],
+      "destination": "https://bookabandapp.com/:path*",
       "permanent": true
     }
   ]
