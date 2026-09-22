@@ -43,7 +43,7 @@ const layout = [
 const likeBubbles = [
   { src: "/like_1.png", size: 167, cls: "right-[-15%] top-[26%] w-[22%]" },
   { src: "/like_2.png", size: 149, cls: "right-[-19%] top-[42%] w-[18%]" },
-  { src: "/like_3.png", size: 55, cls: "right-[-3%] top-[49%] w-[14%]" },
+  { src: "/like_3.png", size: 55, cls: "right-[-3%] top-[49%] w-[14%] z-20" },
   { src: "/like_4.png", size: 113, cls: "right-[-12%] top-[61%] w-[14%]" },
 ] as const;
 
