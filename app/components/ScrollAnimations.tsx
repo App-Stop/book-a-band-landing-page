@@ -18,7 +18,15 @@ const OFFSETS: Record<string, gsap.TweenVars> = {
   right: { x: 90 },
   scale: { y: 48, scale: 0.94 },
   fade: {},
+  // Pops in from a small scale with a bounce — reads as "emerging out of"
+  // whatever it's layered on top of, rather than sliding/fading in.
+  bubble: { scale: 0.3, y: 22 },
 };
+
+/* "bubble" wants a springy pop instead of the usual ease-out glide. */
+function easeFor(kind: string) {
+  return kind === "bubble" ? "back.out(1.7)" : "power3.out";
+}
 
 const CLEAR = "opacity,transform,x,y,scale,rotate,translate,visibility";
 
@@ -163,7 +171,7 @@ function scrollReveals() {
       ...OFFSETS[kind],
       opacity: 0,
       duration: 0.95,
-      ease: "power3.out",
+      ease: easeFor(kind),
       scrollTrigger: { trigger: el, start: "clamp(top 88%)", once: true },
       onComplete: () => thaw([el]),
     });
@@ -177,9 +185,9 @@ function scrollReveals() {
     gsap.from(items, {
       ...OFFSETS[kind],
       opacity: 0,
-      duration: 0.8,
+      duration: kind === "bubble" ? 0.65 : 0.8,
       stagger: 0.13,
-      ease: "power3.out",
+      ease: easeFor(kind),
       scrollTrigger: { trigger: group, start: "clamp(top 86%)", once: true },
       onComplete: () => thaw(items),
     });

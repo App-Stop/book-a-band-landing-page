@@ -36,7 +36,7 @@ export default function Navbar() {
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-3 pt-3 sm:px-4 sm:pt-4 lg:pt-[30px]">
       <div ref={wrapRef} className="relative w-full max-w-[712px]">
-        <nav data-hero="nav" className="glass pointer-events-auto flex w-full items-center justify-between gap-3 rounded-[60px] py-2.5 pl-4 pr-2.5 sm:gap-6 sm:py-3.5 sm:pl-[26px] sm:pr-3.5 lg:gap-[40px] lg:py-[10px] lg:pl-[27px] lg:pr-4 lg:leading-none">
+        <nav data-hero="nav" className="glass-nav pointer-events-auto flex w-full items-center justify-between gap-3 rounded-[60px] py-2.5 pl-4 pr-2.5 sm:gap-6 sm:py-3.5 sm:pl-[26px] sm:pr-3.5 lg:gap-[40px] lg:py-[10px] lg:pl-[27px] lg:pr-4 lg:leading-none">
           <a
             href="#home"
             onClick={() => setOpen(false)}
@@ -68,7 +68,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2 sm:gap-2.5">
             <button
               type="button"
-              className="glass hidden items-center gap-1.5 rounded-[20px] py-2 pl-2 pr-3.5 text-sm transition-opacity duration-200 hover:opacity-80 sm:flex lg:text-base"
+              className="glass-nav hidden items-center gap-1.5 rounded-[20px] py-2 pl-2 pr-3.5 text-sm transition-opacity duration-200 hover:opacity-80 sm:flex lg:text-base"
             >
               <Image
                 src="/globe.svg"
@@ -94,7 +94,7 @@ export default function Navbar() {
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
               aria-controls="mobile-menu"
-              className="glass grid size-10 shrink-0 place-items-center rounded-full transition-colors duration-200 hover:bg-white/10 md:hidden"
+              className="glass-nav grid size-10 shrink-0 place-items-center rounded-full transition-colors duration-200 hover:bg-white/10 md:hidden"
             >
               <span className="relative block h-3.5 w-5" aria-hidden>
                 <span
@@ -120,13 +120,13 @@ export default function Navbar() {
         {/* Mobile menu: same glass panel as the bar, drops down beneath it */}
         <div
           id="mobile-menu"
-          className={`glass absolute inset-x-0 top-full mt-2 origin-top overflow-hidden rounded-[28px] transition-all duration-300 md:hidden ${
+          className={`glass-nav absolute inset-x-0 top-full mt-2 origin-top overflow-hidden rounded-[28px] transition-all duration-300 md:hidden ${
             open
               ? "pointer-events-auto translate-y-0 scale-100 opacity-100"
               : "pointer-events-none -translate-y-2 scale-95 opacity-0"
           }`}
           aria-hidden={!open}
-          style={{ backgroundColor: "rgba(16, 11, 36, 0.97)" }}
+          style={{ backgroundColor: "rgba(20, 14, 44, 0.8)" }}
         >
           <ul className="flex flex-col p-3">
             {navLinks.map(({ label, href }) => (
@@ -146,11 +146,11 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <div className="flex items-center justify-between gap-3 border-t border-white/15 p-3">
+          <div className="flex items-center justify-between gap-3 border-t border-white/10 p-3">
             <button
               type="button"
               tabIndex={open ? 0 : -1}
-              className="glass flex items-center gap-1.5 rounded-[20px] py-2 pl-2 pr-3.5 text-sm transition-opacity duration-200 hover:opacity-80"
+              className="glass-nav flex items-center gap-1.5 rounded-[20px] py-2 pl-2 pr-3.5 text-sm transition-opacity duration-200 hover:opacity-80"
             >
               <Image
                 src="/globe.svg"

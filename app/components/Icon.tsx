@@ -12,6 +12,7 @@ type IconName =
   | "chevron-right"
   | "close"
   | "star"
+  | "eye"
   | "instagram"
   | "x"
   | "tiktok"
@@ -87,6 +88,12 @@ const paths: Record<IconName, React.ReactNode> = {
   star: (
     <>
       <path d="m12 3.6 2.6 5.4 5.9.8-4.3 4.1 1 5.9-5.2-2.9-5.2 2.9 1-5.9L3.5 9.8l5.9-.8L12 3.6Z" />
+    </>
+  ),
+  eye: (
+    <>
+      <path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" />
+      <circle cx="12" cy="12" r="2.6" />
     </>
   ),
   instagram: (

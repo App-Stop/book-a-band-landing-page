@@ -141,10 +141,10 @@ export const appFeatures = [
     icon: "play",
     title: ["SWIPE, WATCH", "& BOOK"],
     body: "Scroll through short clips of live performances, hear bands in action, and book your favorite act for any event — all without leaving the feed.",
-    image: "/app-feed.png",
+    image: "/app-feed_1.png",
     imageAlt: "In-app video feed with a Book Band button",
-    imageWidth: 918,
-    imageHeight: 1024,
+    imageWidth: 546,
+    imageHeight: 799,
     reversed: false,
   },
   {

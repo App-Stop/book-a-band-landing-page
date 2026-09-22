@@ -56,6 +56,15 @@ html.anim [data-word] {
   box-shadow: var(--glass-shadow);
 }
 
+/* Navbar: translucent, same dark-violet scheme, hairline border. */
+@utility glass-nav {
+  border: 0.5px solid rgba(255, 255, 255, 0.32);
+  background-color: rgba(24, 19, 45, 0.42);
+  -webkit-backdrop-filter: blur(18px) saturate(1.3);
+  backdrop-filter: blur(18px) saturate(1.3);
+  box-shadow: var(--glass-shadow);
+}
+
 /* Lighter variant for the large stat cards. */
 @utility glass-soft {
   border: 1px solid rgba(255, 255, 255, 0.6);
@@ -103,6 +112,27 @@ html.anim [data-word] {
   .animate-tour-progress {
     animation: none;
     transform: scaleX(1);
+  }
+}
+
+@keyframes bubble-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8%);
+  }
+}
+
+/* Idle drift for the like/message bubbles floating off the app mockups. */
+@utility animate-bubble-float {
+  animation: bubble-float 3.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-bubble-float {
+    animation: none;
   }
 }
 
