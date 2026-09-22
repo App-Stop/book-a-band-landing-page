@@ -106,16 +106,21 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Figma: visible phones span x1252 → 1712, y180 → 795 */}
-        <div data-hero="phones" className="relative mx-auto aspect-[1191/1708] w-full max-w-[300px] sm:max-w-[380px] lg:absolute lg:left-[58.8%] lg:top-[max(5.9%,96px)] lg:mx-0 lg:w-[31.15%] lg:max-w-none">
-          <Image
-            src="/phones.png"
-            alt="Book a Band app running on two iPhones"
-            fill
-            priority
-            sizes="(max-width: 1024px) 80vw, 600px"
-            className="object-contain object-center"
-          />
+        {/* Figma: visible phones span x1252 → 1712, y180 → 795. Centered
+            vertically in the hero via a full-height flex column so it isn't
+            pinned near the top — kept off the phone's own box so GSAP's
+            entrance transform never fights a static centering transform. */}
+        <div className="contents lg:absolute lg:inset-y-0 lg:left-[61%] lg:flex lg:w-[24%] lg:items-center">
+          <div data-hero="phones" className="relative mx-auto aspect-[1191/1708] w-full max-w-[220px] sm:max-w-[300px] lg:mx-0 lg:max-w-none">
+            <Image
+              src="/phones.png"
+              alt="Book a Band app running on two iPhones"
+              fill
+              priority
+              sizes="(max-width: 1024px) 80vw, 600px"
+              className="object-contain object-center"
+            />
+          </div>
         </div>
 
         {/* Figma: cards straddle the hero's bottom edge (y917 → 1055) */}

@@ -13,19 +13,27 @@ const layout = [
     text: "lg:left-[7.55%] lg:top-[9.23%]",
     gap: "lg:gap-[1.2cqw]",
     indent: "lg:ml-[4.15cqw]",
-    image: "lg:left-[58%] lg:top-[3.78%] lg:w-[27%]",
+    // Left/width place the phone horizontally. Row 3 below uses a real
+    // top+bottom band to flex-center the phone in it; rows 1-2 only ever
+    // had a valid `bottom`, so — since that already renders the layout
+    // we want — they're intentionally bottom-anchored (shrink-to-fit
+    // height, no `top`) rather than centered in a band. Kept as-is.
+    imageBox: "lg:left-[62%] lg:w-[21%]",
+    imageBand: "lg:bottom-[75.3%]",
   },
   {
     text: "lg:left-[50.19%] lg:top-[40.08%]",
     gap: "lg:gap-[1.6cqw]",
     indent: "lg:ml-[4.55cqw]",
-    image: "lg:left-[12.77%] lg:top-[35.92%] lg:w-[20.13%]",
+    imageBox: "lg:left-[14.5%] lg:w-[16%]",
+    imageBand: "lg:bottom-[41.3%]",
   },
   {
     text: "lg:left-[7.03%] lg:top-[73.38%]",
     gap: "lg:gap-[1.66cqw]",
     indent: "lg:ml-[4.6cqw]",
-    image: "lg:left-[64.43%] lg:top-[67.96%] lg:w-[20.13%]",
+    imageBox: "lg:left-[66.5%] lg:w-[16%]",
+    imageBand: "lg:top-[60.7%] lg:bottom-0",
   },
 ] as const;
 
@@ -148,59 +156,65 @@ export default function AppFeatures() {
               </div>
             </div>
 
+            {/* Outer wrapper marks out this row's horizontal slot and
+                vertical third of the artboard, then flex-centers the phone
+                inside it — kept off the phone's own box so the scroll
+                parallax transform never fights a static centering one. */}
             <div
-              data-reveal={feature.reversed ? "left" : "right"}
-              data-parallax="0.05"
-              className={`relative mx-auto w-full lg:absolute lg:mx-0 lg:max-w-none lg:translate-x-0 ${
-                index === 0 || index === 1
-                  ? "max-w-[110px] sm:max-w-[150px]"
-                  : "max-w-[200px] sm:max-w-[260px]"
-              } ${index === 0 ? "-translate-x-[9.5%]" : ""} ${layout[index].image}`}
+              className={`contents lg:absolute lg:mx-0 lg:flex lg:items-center ${layout[index].imageBox} ${layout[index].imageBand}`}
             >
-              <Image
-                src={feature.image}
-                alt={feature.imageAlt}
-                width={feature.imageWidth}
-                height={feature.imageHeight}
-                sizes="(max-width: 1024px) 80vw, 870px"
-                className="h-auto w-full object-contain"
-              />
+              <div
+                data-reveal={feature.reversed ? "left" : "right"}
+                data-parallax="0.05"
+                className={`relative mx-auto w-full max-w-[160px] sm:max-w-[210px] lg:mx-0 lg:max-w-none lg:translate-x-0 ${
+                  index === 0 ? "-translate-x-[9.5%]" : ""
+                }`}
+              >
+                <Image
+                  src={feature.image}
+                  alt={feature.imageAlt}
+                  width={feature.imageWidth}
+                  height={feature.imageHeight}
+                  sizes="(max-width: 1024px) 80vw, 870px"
+                  className="h-auto w-full object-contain"
+                />
 
-              {index === 0 && (
-                <>
-                  <div data-reveal="up" className="absolute left-[22%] top-[5%]">
-                    <ViewsPill />
-                  </div>
-                  <div data-stagger="right">
-                    {likeBubbles.map((bubble, i) => (
+                {index === 0 && (
+                  <>
+                    <div data-reveal="up" className="absolute left-[22%] top-[5%]">
+                      <ViewsPill />
+                    </div>
+                    <div data-stagger="right">
+                      {likeBubbles.map((bubble, i) => (
+                        <FloatingBubble
+                          key={bubble.src}
+                          src={bubble.src}
+                          width={bubble.size}
+                          height={bubble.size}
+                          className={bubble.cls}
+                          delay={i * 0.35}
+                        />
+                      ))}
+                    </div>
+                  </>
+                )}
+
+                {index === 1 && (
+                  <div data-stagger="bubble">
+                    {messageBubbles.map((bubble, i) => (
                       <FloatingBubble
                         key={bubble.src}
                         src={bubble.src}
-                        width={bubble.size}
-                        height={bubble.size}
+                        width={bubble.w}
+                        height={bubble.h}
                         className={bubble.cls}
-                        delay={i * 0.35}
+                        delay={i * 0.3}
+                        float={false}
                       />
                     ))}
                   </div>
-                </>
-              )}
-
-              {index === 1 && (
-                <div data-stagger="bubble">
-                  {messageBubbles.map((bubble, i) => (
-                    <FloatingBubble
-                      key={bubble.src}
-                      src={bubble.src}
-                      width={bubble.w}
-                      height={bubble.h}
-                      className={bubble.cls}
-                      delay={i * 0.3}
-                      float={false}
-                    />
-                  ))}
-                </div>
-              )}
+                )}
+              </div>
             </div>
           </div>
         ))}

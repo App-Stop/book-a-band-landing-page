@@ -111,22 +111,27 @@ export default function AppTour() {
             </ul>
           </div>
 
-          {/* Figma: phone + scan chip artwork is 545 × 873 at (1217, 1546) */}
-          <div data-reveal="right" data-parallax="0.06" className="relative mx-auto aspect-[1090/1746] w-full max-w-[320px] sm:max-w-[380px] lg:absolute lg:left-[63.39%] lg:top-[-6px] lg:mx-0 lg:w-[28.39%] lg:max-w-none short:left-[70%] short:top-[15%] short:w-[19%]">
-            {appTourItems.map((item, index) => (
-              <Image
-                key={item.image}
-                src={item.image}
-                alt={item.imageAlt}
-                fill
-                sizes="(max-width: 1024px) 70vw, 545px"
-                priority={index === 0}
-                className={`object-contain object-center transition-opacity duration-700 ${
-                  index === active ? "z-10 opacity-100" : "z-0 opacity-0"
-                }`}
-              />
-            ))}
-            <span className="sr-only">{current.imageAlt}</span>
+          {/* Figma: phone + scan chip artwork is 545 × 873 at (1217, 1546).
+              Centered vertically in the section via a full-height flex
+              column, kept off the phone's own box so the scroll parallax
+              transform never fights a static centering transform. */}
+          <div className="contents lg:absolute lg:inset-y-0 lg:left-[65%] lg:flex lg:w-[20%] lg:items-center short:left-[71%] short:w-[14%]">
+            <div data-reveal="right" data-parallax="0.06" className="relative mx-auto aspect-[1090/1746] w-full max-w-[230px] sm:max-w-[290px] lg:mx-0 lg:max-w-none">
+              {appTourItems.map((item, index) => (
+                <Image
+                  key={item.image}
+                  src={item.image}
+                  alt={item.imageAlt}
+                  fill
+                  sizes="(max-width: 1024px) 70vw, 545px"
+                  priority={index === 0}
+                  className={`object-contain object-center transition-opacity duration-700 ${
+                    index === active ? "z-10 opacity-100" : "z-0 opacity-0"
+                  }`}
+                />
+              ))}
+              <span className="sr-only">{current.imageAlt}</span>
+            </div>
           </div>
         </div>
       </div>
