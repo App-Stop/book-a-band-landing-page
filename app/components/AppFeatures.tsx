@@ -171,7 +171,7 @@ export default function AppFeatures() {
                   <div data-reveal="up" className="absolute left-[22%] top-[5%]">
                     <ViewsPill />
                   </div>
-                  <div data-stagger="right" className="contents">
+                  <div data-stagger="right">
                     {likeBubbles.map((bubble, i) => (
                       <FloatingBubble
                         key={bubble.src}
@@ -187,7 +187,7 @@ export default function AppFeatures() {
               )}
 
               {index === 1 && (
-                <div data-stagger="bubble" className="contents">
+                <div data-stagger="bubble">
                   {messageBubbles.map((bubble, i) => (
                     <FloatingBubble
                       key={bubble.src}
