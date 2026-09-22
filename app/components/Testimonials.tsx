@@ -58,7 +58,7 @@ export default function Testimonials() {
                   className={`shrink-0 overflow-hidden text-[#14121c] transition-all duration-500 ease-out ${
                     isActive
                       ? "w-[min(646px,88vw)] translate-x-0 rounded-[24px] bg-[#e7e7eb] p-5 opacity-100 shadow-[0_30px_60px_rgba(0,0,0,0.35)] lg:w-[33.65cqw] lg:p-[1.6cqw]"
-                      : `pointer-events-none w-0 rounded-[24px] p-0 opacity-0 lg:w-[26.93cqw] lg:p-[1.25cqw] lg:opacity-100 ${
+                      : `pointer-events-none h-0 w-0 rounded-[24px] p-0 opacity-0 lg:h-auto lg:w-[26.93cqw] lg:p-[1.25cqw] lg:opacity-100 ${
                           offset < 0
                             ? "-translate-x-2 bg-[linear-gradient(90deg,#5c5c65,#e7e8ec_85%)]"
                             : "translate-x-2 bg-[linear-gradient(270deg,#575762,#e7e8ec_85%)]"

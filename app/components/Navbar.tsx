@@ -146,7 +146,7 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <div className="flex items-center justify-between gap-3 border-t border-white/10 p-3">
+          <div className="flex items-center justify-center border-t border-white/10 p-3">
             <button
               type="button"
               tabIndex={open ? 0 : -1}
@@ -161,15 +161,6 @@ export default function Navbar() {
               />
               EN
             </button>
-
-            <a
-              href="#get-app"
-              onClick={() => setOpen(false)}
-              tabIndex={open ? 0 : -1}
-              className="rounded-full bg-gradient-to-b from-[#0300a6] to-[#ce00af] px-6 py-3 text-sm font-semibold transition-transform duration-200 active:scale-[0.98]"
-            >
-              Get the App
-            </a>
           </div>
         </div>
       </div>
