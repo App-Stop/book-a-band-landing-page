@@ -94,7 +94,7 @@ function GetAppModal({
         role="dialog"
         aria-modal="true"
         aria-labelledby="get-app-title"
-        className="relative z-10 flex max-h-[92vh] w-full max-w-[900px] flex-col items-center gap-8 overflow-y-auto overflow-x-hidden rounded-[32px] bg-[#23213c] px-5 pb-8 pt-8 text-white shadow-[0px_4px_160px_rgba(0,0,0,0.6)] sm:gap-10 sm:rounded-[40px] sm:px-8 sm:pb-10 sm:pt-9 lg:gap-[60px] lg:rounded-[50px] lg:px-[30px] lg:pb-[80px] lg:pt-[30px] short:gap-5 short:rounded-[28px] short:px-6 short:pb-6 short:pt-6"
+        className="relative z-10 flex max-h-[95vh] w-full max-w-[900px] flex-col items-center gap-8 overflow-hidden rounded-[32px] bg-[#23213c] px-5 pb-8 pt-8 text-white shadow-[0px_4px_160px_rgba(0,0,0,0.6)] sm:gap-10 sm:rounded-[40px] sm:px-8 sm:pb-10 sm:pt-9 lg:gap-[clamp(16px,5vh,60px)] lg:rounded-[50px] lg:px-[30px] lg:pb-[clamp(16px,7vh,80px)] lg:pt-[clamp(16px,3.5vh,30px)]"
       >
         {/* Figma: two blurred colour blobs (#001EFF left, #D000FF right) */}
         <div className="pointer-events-none absolute -left-[20%] -top-[10%] h-[70%] w-[65%] rounded-full bg-[#001EFF] opacity-25 blur-[70px] sm:blur-[90px] lg:blur-[110px]" />
@@ -114,36 +114,36 @@ function GetAppModal({
             type="button"
             onClick={onClose}
             aria-label="Close"
-            className="grid size-10 shrink-0 place-items-center rounded-full border border-white/60 bg-[rgba(24,19,45,0.2)] shadow-[0_27px_60px_rgba(0,0,0,0.06)] backdrop-blur-[15px] transition-colors duration-200 hover:bg-white/10 sm:size-11 lg:size-[50px]"
+            className="grid size-10 shrink-0 place-items-center rounded-full border border-white/60 bg-[rgba(24,19,45,0.2)] shadow-[0_27px_60px_rgba(0,0,0,0.06)] backdrop-blur-[15px] transition-colors duration-200 hover:bg-white/10 sm:size-11 lg:size-[clamp(36px,6vh,50px)]"
           >
             <Icon name="close" className="size-4 sm:size-5" />
           </button>
 
-          <div className="flex w-full flex-col items-center gap-2 text-center sm:gap-3 lg:gap-4">
+          <div className="flex w-full flex-col items-center gap-2 text-center sm:gap-3 lg:gap-[clamp(8px,1.5vh,16px)]">
             <h2
               id="get-app-title"
-              className="display text-[clamp(24px,4.5vw,48px)] uppercase leading-none short:text-[34px]"
+              className="display text-[clamp(20px,min(4.5vw,5.5vh),48px)] uppercase leading-none"
             >
               Scan to download
             </h2>
-            <p className="mx-auto max-w-[540px] text-[15px] leading-6 tracking-[0.4px] text-white text-shadow-[0px_0px_30px_rgba(0,0,0,0.8)] sm:text-base lg:text-xl lg:leading-[30px] short:text-sm short:leading-5">
+            <p className="mx-auto max-w-[540px] text-[15px] leading-6 tracking-[0.4px] text-white text-shadow-[0px_0px_30px_rgba(0,0,0,0.8)] sm:text-base lg:text-[clamp(14px,2vh,20px)] lg:leading-[clamp(20px,3vh,30px)]">
               Point your smartphone camera at the QR to download Book a Band
             </p>
           </div>
         </div>
 
-        <div className="relative z-10 flex flex-row items-center justify-center gap-4 sm:gap-12 lg:gap-[100px] short:gap-8">
-          <div className="flex flex-col items-center gap-4 sm:gap-6 lg:gap-[40px] short:gap-5">
+        <div className="relative z-10 flex flex-row items-center justify-center gap-4 sm:gap-12 lg:gap-[clamp(24px,6vh,100px)]">
+          <div className="flex flex-col items-center gap-4 sm:gap-6 lg:gap-[clamp(12px,4vh,40px)]">
             <Image
               src="/qr.png"
               alt="Scan to download the Book a Band app"
               width={342}
               height={342}
               priority
-              className="size-[150px] rounded-[22px] bg-white object-cover sm:size-[240px] sm:rounded-[34px] lg:size-[342px] lg:rounded-[50px] short:size-[220px] short:rounded-[32px]"
+              className="size-[150px] rounded-[22px] bg-white object-cover sm:size-[240px] sm:rounded-[34px] lg:size-[clamp(120px,24vh,342px)] lg:rounded-[clamp(18px,3.5vh,50px)]"
             />
 
-            <div className="flex items-center gap-2 sm:gap-4 lg:gap-6">
+            <div className="flex items-center gap-2 sm:gap-4 lg:gap-[clamp(8px,2vh,24px)]">
               {storeLinks.map(({ src, alt, href }) => (
                 <a
                   key={alt}
@@ -155,7 +155,7 @@ function GetAppModal({
                     alt={alt}
                     width={162}
                     height={60}
-                    className="h-[26px] w-[71px] object-contain sm:h-[46px] sm:w-[125px] lg:h-[60px] lg:w-[163px] short:h-[42px] short:w-[114px]"
+                    className="h-[26px] w-[71px] object-contain sm:h-[46px] sm:w-[125px] lg:h-[clamp(26px,5vh,60px)] lg:w-[clamp(71px,13.6vh,163px)]"
                   />
                 </a>
               ))}
@@ -165,10 +165,13 @@ function GetAppModal({
           {/* app-discover.png has a lot of glow padding baked around the phone
               itself (the modal's own blobs already supply that atmosphere),
               so crop tight to just the bezel via a scaled background-image
-              instead of rendering the full padded asset at a bigger size. */}
+              instead of rendering the full padded asset at a bigger size.
+              lg: sizing is vh-clamped (not a fixed size or a `short:` cutoff)
+              so it shrinks continuously with the viewport instead of ever
+              forcing the modal to scroll. */}
           <div
             aria-hidden="true"
-            className="w-[90px] shrink-0 overflow-hidden rounded-[10%] bg-[length:181.75%_auto] bg-center bg-no-repeat sm:w-[150px] lg:w-[210px] short:w-[150px]"
+            className="w-[90px] shrink-0 overflow-hidden rounded-[10%] bg-[length:181.75%_auto] bg-center bg-no-repeat sm:w-[150px] lg:w-[clamp(90px,17vh,210px)]"
             style={{
               backgroundImage: "url('/app-discover.png')",
               aspectRatio: "526 / 1090",
