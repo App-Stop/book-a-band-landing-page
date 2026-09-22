@@ -112,7 +112,7 @@ export default function AppTour() {
           </div>
 
           {/* Figma: phone + scan chip artwork is 545 × 873 at (1217, 1546) */}
-          <div data-reveal="right" data-parallax="0.06" className="relative mx-auto aspect-[1090/1746] w-full max-w-[320px] sm:max-w-[380px] lg:absolute lg:left-[63.39%] lg:top-[-6px] lg:mx-0 lg:w-[28.39%] short:left-[65.4%] short:w-[24.4%] lg:max-w-none">
+          <div data-reveal="right" data-parallax="0.06" className="relative mx-auto aspect-[1090/1746] w-full max-w-[320px] sm:max-w-[380px] lg:absolute lg:left-[63.39%] lg:top-[-6px] lg:mx-0 lg:w-[28.39%] lg:max-w-none short:left-[70%] short:top-[15%] short:w-[19%]">
             {appTourItems.map((item, index) => (
               <Image
                 key={item.image}

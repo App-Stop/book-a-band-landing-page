@@ -57,7 +57,7 @@ export default function AiMatch() {
           </ScriptAccent>
 
           {/* Figma: 1308px panel, tucked under the band cards */}
-          <div data-reveal="up" className="relative mx-auto mt-10 grid w-full max-w-[1308px] grid-cols-1 gap-8 rounded-[30px] border border-[#662e69]/70 bg-[linear-gradient(135deg,rgba(45,15,125,0.32),rgba(20,10,40,0.05)_45%,rgba(95,15,105,0.28))] p-6 pb-24 backdrop-blur-md sm:grid-cols-2 lg:mt-[121px] lg:gap-[10px] lg:p-[30px] lg:pb-[90px] short:mt-[64px] short:pb-[64px]">
+          <div data-reveal="up" className="relative mx-auto mt-20 grid w-full max-w-[1308px] grid-cols-1 gap-8 rounded-[30px] border border-[#662e69]/70 bg-[linear-gradient(135deg,rgba(45,15,125,0.32),rgba(20,10,40,0.05)_45%,rgba(95,15,105,0.28))] p-6 pb-24 backdrop-blur-md sm:grid-cols-2 lg:mt-[121px] lg:gap-[10px] lg:p-[30px] lg:pb-[90px] short:mt-[64px] short:pb-[64px]">
             {aiMatchSteps.map((step, stepIndex) => (
               <div key={step.label}>
                 <span

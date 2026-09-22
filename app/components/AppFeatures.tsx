@@ -13,13 +13,13 @@ const layout = [
     text: "lg:left-[7.55%] lg:top-[9.23%]",
     gap: "lg:gap-[1.2cqw]",
     indent: "lg:ml-[4.15cqw]",
-    image: "lg:left-[47.34%] lg:top-[3.78%] lg:w-[27%]",
+    image: "lg:left-[58%] lg:top-[3.78%] lg:w-[27%]",
   },
   {
-    text: "lg:left-[42.19%] lg:top-[40.08%]",
+    text: "lg:left-[50.19%] lg:top-[40.08%]",
     gap: "lg:gap-[1.6cqw]",
     indent: "lg:ml-[4.55cqw]",
-    image: "lg:left-[11.77%] lg:top-[35.92%] lg:w-[20.13%]",
+    image: "lg:left-[12.77%] lg:top-[35.92%] lg:w-[20.13%]",
   },
   {
     text: "lg:left-[7.03%] lg:top-[73.38%]",

@@ -34,7 +34,7 @@ export default function Hero() {
 
         {/* "Sound" is an image locked to YOUR — em units keep it in sync
             with the fluid heading size at every breakpoint. */}
-        <h1 data-hero="title" className="display relative pb-[2.2em] pt-[0.6em] text-[clamp(34px,10vw,60px)] leading-none lg:p-0 sm:whitespace-nowrap lg:absolute lg:left-[7.29%] lg:top-[28.6%] lg:text-[6cqw]">
+        <h1 data-hero="title" className="display relative pb-[2.2em] pt-[1em] text-[clamp(34px,10vw,60px)] leading-none lg:p-0 sm:whitespace-nowrap lg:absolute lg:left-[7.29%] lg:top-[max(31%,175px)] lg:text-[6cqw]">
           <span className="block sm:inline">FIND</span>{" "}
           <span className="relative inline-block lg:static">
             YOUR
@@ -107,7 +107,7 @@ export default function Hero() {
         </div>
 
         {/* Figma: visible phones span x1252 → 1712, y180 → 795 */}
-        <div data-hero="phones" className="relative mx-auto aspect-[1191/1708] w-full max-w-[300px] sm:max-w-[380px] lg:absolute lg:left-[58.8%] lg:top-[5.9%] lg:mx-0 lg:w-[31.15%] lg:max-w-none">
+        <div data-hero="phones" className="relative mx-auto aspect-[1191/1708] w-full max-w-[300px] sm:max-w-[380px] lg:absolute lg:left-[58.8%] lg:top-[max(5.9%,96px)] lg:mx-0 lg:w-[31.15%] lg:max-w-none">
           <Image
             src="/phones.png"
             alt="Book a Band app running on two iPhones"
