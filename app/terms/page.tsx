@@ -163,8 +163,8 @@ export default function TermsPage() {
         <h2>13. Contact us</h2>
         <p>
           Questions about these Terms? Reach Book A Band Inc. through the{" "}
-          <Link href="/#contact" className="text-[var(--cyan)] underline">
-            Contact section
+          <Link href="/contact" className="text-[var(--cyan)] underline">
+            Contact page
           </Link>{" "}
           of our website or from Help in the app, and we will respond as soon
           as we can.

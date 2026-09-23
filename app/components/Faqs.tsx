@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 import Icon from "./Icon";
@@ -9,7 +10,7 @@ export default function Faqs() {
   const [open, setOpen] = useState(0);
 
   return (
-    <section id="contact" className="w-full bg-[#0c0b1a] border-t border-white/10 py-16 lg:pb-[103px] lg:pt-[181px] short:pb-[56px] short:pt-[110px]">
+    <section className="w-full bg-[#0c0b1a] border-t border-white/10 py-16 lg:pb-[103px] lg:pt-[181px] short:pb-[56px] short:pt-[110px]">
       <div className="page-x mx-auto w-full max-w-[1920px]">
         <div className="mx-auto grid w-full max-w-[1314px] grid-cols-1 gap-10 lg:grid-cols-[546px_minmax(0,653px)] lg:justify-between lg:gap-0">
           <div data-reveal="left" className="lg:pt-[5px]">
@@ -20,12 +21,12 @@ export default function Faqs() {
               Everything you need to know about booking live musicians, listing
               your band, payment protection, and platform compatibility.
             </p>
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className="mt-[22px] inline-block rounded-full border border-[var(--cyan)] px-5 py-[10px] text-base leading-[21px] text-[var(--cyan)] transition-colors duration-200 hover:bg-[var(--cyan)]/10"
             >
-              Ask a questions
-            </a>
+              Ask a question
+            </Link>
           </div>
 
           <ul data-stagger="up" className="lg:-mt-[19px]">

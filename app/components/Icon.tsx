@@ -13,6 +13,7 @@ type IconName =
   | "close"
   | "star"
   | "eye"
+  | "mail"
   | "instagram"
   | "x"
   | "tiktok"
@@ -94,6 +95,12 @@ const paths: Record<IconName, React.ReactNode> = {
     <>
       <path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" />
       <circle cx="12" cy="12" r="2.6" />
+    </>
+  ),
+  mail: (
+    <>
+      <rect x="3.5" y="5.5" width="17" height="13" rx="2.5" />
+      <path d="m4.3 7 7.7 6 7.7-6" />
     </>
   ),
   instagram: (

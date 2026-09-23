@@ -226,10 +226,43 @@ export const footerLinks = [
   { label: "Features", href: "/#features" },
   { label: "AI Match", href: "/#ai-match" },
   { label: "For Artists", href: "/#for-artists" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", href: "/contact" },
 ] as const;
 
 export const legalLinks = [
   { label: "Terms & Conditions", href: "/terms" },
   { label: "Privacy Policy", href: "/privacy" },
+] as const;
+
+export const socialLinks = [
+  { name: "instagram", label: "Instagram" },
+  { name: "x", label: "X" },
+  { name: "tiktok", label: "TikTok" },
+  { name: "youtube", label: "YouTube" },
+] as const;
+
+/* Contact page: one card per brand accent (--cyan / --purple / --pink). The
+   last card has no single actionHref — it renders the socialLinks row instead. */
+export const contactChannels = [
+  {
+    icon: "mail",
+    title: "Email us",
+    body: "Support, partnerships, or press — send a note and we reply within one business day.",
+    actionLabel: "hello@bookaband.app",
+    actionHref: "mailto:hello@bookaband.app",
+  },
+  {
+    icon: "chat",
+    title: "Get help in the app",
+    body: "Already booking a band? Open Help from your profile for the fastest response on an active event.",
+    actionLabel: "Get the App",
+    actionHref: "#get-app",
+  },
+  {
+    icon: "broadcast",
+    title: "Follow along",
+    body: "New features, tour stops, and featured bands — posted first on social.",
+    actionLabel: null,
+    actionHref: null,
+  },
 ] as const;

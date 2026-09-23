@@ -1,14 +1,7 @@
 import Link from "next/link";
 
-import Icon, { type IconName } from "./Icon";
-import { footerLinks, legalLinks } from "./site-content";
-
-const socials: { name: IconName; label: string }[] = [
-  { name: "instagram", label: "Instagram" },
-  { name: "x", label: "X" },
-  { name: "tiktok", label: "TikTok" },
-  { name: "youtube", label: "YouTube" },
-];
+import Icon from "./Icon";
+import { footerLinks, legalLinks, socialLinks } from "./site-content";
 
 export default function Footer() {
   return (
@@ -37,7 +30,7 @@ export default function Footer() {
           </p>
 
           <ul className="flex items-center gap-4 lg:gap-[2.6cqw]">
-            {socials.map(({ name, label }) => (
+            {socialLinks.map(({ name, label }) => (
               <li key={label}>
                 <a
                   href="#social"
