@@ -115,7 +115,7 @@ export default function AppTour() {
               Centered vertically in the section via a full-height flex
               column, kept off the phone's own box so the scroll parallax
               transform never fights a static centering transform. */}
-          <div className="contents lg:absolute lg:inset-y-0 lg:left-[65%] lg:flex lg:w-[20%] lg:items-center short:left-[71%] short:w-[14%]">
+          <div className="contents lg:absolute lg:inset-y-0 lg:left-[65%] lg:flex lg:w-[20%] lg:items-center short:left-[62%] short:w-[22%]">
             <div data-reveal="right" data-parallax="0.06" className="relative mx-auto aspect-[1090/1746] w-full max-w-[230px] sm:max-w-[290px] lg:mx-0 lg:max-w-none">
               {appTourItems.map((item, index) => (
                 <Image
