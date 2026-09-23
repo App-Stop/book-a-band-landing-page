@@ -168,10 +168,13 @@ function GetAppModal({
               instead of rendering the full padded asset at a bigger size.
               lg: sizing is vh-clamped (not a fixed size or a `short:` cutoff)
               so it shrinks continuously with the viewport instead of ever
-              forcing the modal to scroll. */}
+              forcing the modal to scroll. Below lg the width is also capped
+              by vh, and on mobile by the space left beside the 150px QR
+              (100vw − 16px×2 outer padding − 20px×2 modal padding − 150px QR
+              − 16px gap), so the row never overflows. */}
           <div
             aria-hidden="true"
-            className="w-[90px] shrink-0 overflow-hidden rounded-[10%] bg-[length:181.75%_auto] bg-center bg-no-repeat sm:w-[150px] lg:w-[clamp(90px,17vh,210px)]"
+            className="w-[min(115px,calc(100vw_-_238px),22vh)] shrink-0 overflow-hidden rounded-[10%] bg-[length:181.75%_auto] bg-center bg-no-repeat sm:w-[min(185px,22vh)] lg:w-[clamp(90px,22vh,260px)]"
             style={{
               backgroundImage: "url('/app-discover.png')",
               aspectRatio: "526 / 1090",

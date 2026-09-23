@@ -106,18 +106,20 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Figma: visible phones span x1252 → 1712, y180 → 795. Centered
+        {/* Figma: visible phones span x1248 → 1712, y180 → 794. phones.png
+            (1191 × 1708, incl. glow) scales ×0.503 to match → 599px box at
+            x1126 (58.6% / 31.2%). Centered
             vertically in the hero via a full-height flex column so it isn't
             pinned near the top — kept off the phone's own box so GSAP's
             entrance transform never fights a static centering transform. */}
-        <div className="contents lg:absolute lg:inset-y-0 lg:left-[61%] lg:flex lg:w-[24%] lg:items-center">
-          <div data-hero="phones" className="relative mx-auto aspect-[1191/1708] w-full max-w-[220px] sm:max-w-[300px] lg:mx-0 lg:max-w-none">
+        <div className="contents lg:absolute lg:inset-y-0 lg:left-[58.6%] lg:flex lg:w-[31.2%] lg:items-center">
+          <div data-hero="phones" className="relative mx-auto aspect-[1191/1708] w-full max-w-[260px] sm:max-w-[340px] lg:mx-0 lg:max-w-none">
             <Image
               src="/phones.png"
               alt="Book a Band app running on two iPhones"
               fill
               priority
-              sizes="(max-width: 1024px) 80vw, 600px"
+              sizes="(max-width: 1024px) 82vw, 600px"
               className="object-contain object-center"
             />
           </div>
