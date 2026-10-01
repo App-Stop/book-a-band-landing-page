@@ -83,36 +83,44 @@ function heroIntro() {
     onComplete: () => {
       thaw(all);
       // Phones drift gently once they have landed.
-      gsap.to(phones, {
-        y: -12,
-        duration: 3.2,
-        ease: "sine.inOut",
-        yoyo: true,
-        repeat: -1,
-      });
+      if (phones.length) {
+        gsap.to(phones, {
+          y: -12,
+          duration: 3.2,
+          ease: "sine.inOut",
+          yoyo: true,
+          repeat: -1,
+        });
+      }
     },
   });
 
-  tl.from(nav, { y: -48, opacity: 0, duration: 0.7 })
-    .from(badge, { y: -24, opacity: 0, duration: 0.6 }, "-=0.35")
-    .from(title, { y: 70, opacity: 0, duration: 0.95 }, "-=0.4")
-    .from(
-      sound,
-      {
-        scale: 0.78,
-        rotate: -5,
-        opacity: 0,
-        transformOrigin: "0% 60%",
-        duration: 1.2,
-        ease: "back.out(1.5)",
-      },
-      "-=0.65",
-    )
-    .from(copy, { y: 32, opacity: 0, duration: 0.8 }, "-=0.7")
-    .from(cta, { y: 32, opacity: 0, duration: 0.8 }, "-=0.6")
-    .from(pill, { x: -36, opacity: 0, duration: 0.8 }, "-=0.6")
-    .from(phones, { y: 90, opacity: 0, rotate: 2.5, duration: 1.2 }, "-=1.5")
-    .from(stats, { y: 64, opacity: 0, duration: 0.8, stagger: 0.12 }, "-=0.6");
+  // Pages other than home only carry some hero targets (e.g. just the nav), so
+  // skip the empty ones instead of making GSAP warn about each.
+  const add = (targets: HTMLElement[], vars: gsap.TweenVars, position?: string) => {
+    if (targets.length) tl.from(targets, vars, position);
+  };
+
+  add(nav, { y: -48, opacity: 0, duration: 0.7 });
+  add(badge, { y: -24, opacity: 0, duration: 0.6 }, "-=0.35");
+  add(title, { y: 70, opacity: 0, duration: 0.95 }, "-=0.4");
+  add(
+    sound,
+    {
+      scale: 0.78,
+      rotate: -5,
+      opacity: 0,
+      transformOrigin: "0% 60%",
+      duration: 1.2,
+      ease: "back.out(1.5)",
+    },
+    "-=0.65",
+  );
+  add(copy, { y: 32, opacity: 0, duration: 0.8 }, "-=0.7");
+  add(cta, { y: 32, opacity: 0, duration: 0.8 }, "-=0.6");
+  add(pill, { x: -36, opacity: 0, duration: 0.8 }, "-=0.6");
+  add(phones, { y: 90, opacity: 0, rotate: 2.5, duration: 1.2 }, "-=1.5");
+  add(stats, { y: 64, opacity: 0, duration: 0.8, stagger: 0.12 }, "-=0.6");
 
   counters.forEach((el, i) => {
     const info = parsed[i];

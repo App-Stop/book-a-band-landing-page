@@ -19,15 +19,19 @@ export async function generateMetadata({
   params,
 }: PageProps<"/reels/[reelId]">): Promise<Metadata> {
   const { reelId } = await params;
-  const reel = await getReel(reelId);
+  const result = await getReel(reelId);
 
-  if (!reel) {
+  if (result.status !== "ok") {
+    const failed = result.status === "error";
     return {
-      title: `${reelCopy.unavailableTitle} — Book a Band`,
-      description: reelCopy.unavailableDescription,
+      title: `${failed ? reelCopy.errorTitle : reelCopy.unavailableTitle} — Book a Band`,
+      description: failed
+        ? reelCopy.errorDescription
+        : reelCopy.unavailableDescription,
       robots: { index: false, follow: false },
     };
   }
+  const { reel } = result;
 
   const title = `${reel.bandName}'s reel on Book A Band`;
   const description = reel.caption || reelCopy.defaultCaption;
@@ -59,7 +63,8 @@ export default async function ReelPage({
   params,
 }: PageProps<"/reels/[reelId]">) {
   const { reelId } = await params;
-  const [reel, headerList] = await Promise.all([getReel(reelId), headers()]);
+  const [result, headerList] = await Promise.all([getReel(reelId), headers()]);
+  const reel = result.status === "ok" ? result.reel : null;
   const platform = detectPlatform(headerList.get("user-agent"));
 
   const stores = [
@@ -148,10 +153,14 @@ export default async function ReelPage({
           ) : (
             <>
               <h1 className="display text-[clamp(24px,4vw,44px)] leading-tight">
-                {reelCopy.unavailableTitle}
+                {result.status === "error"
+                  ? reelCopy.errorTitle
+                  : reelCopy.unavailableTitle}
               </h1>
               <p className="max-w-[48ch] text-white/80">
-                {reelCopy.unavailableDescription}
+                {result.status === "error"
+                  ? reelCopy.errorDescription
+                  : reelCopy.unavailableDescription}
               </p>
             </>
           )}

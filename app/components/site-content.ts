@@ -278,4 +278,7 @@ export const reelCopy = {
   unavailableTitle: "This reel is no longer available",
   unavailableDescription:
     "It may have been removed. Get the app to discover and book live bands.",
+  errorTitle: "We couldn't load this reel",
+  errorDescription:
+    "Something went wrong on our end. Please try again in a moment, or get the app to watch it there.",
 } as const;
