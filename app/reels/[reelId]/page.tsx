@@ -5,6 +5,7 @@ import Image from "next/image";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import ReelPlayer from "../../components/ReelPlayer";
+import ScrollAnimations from "../../components/ScrollAnimations";
 import {
   appStoreUrl,
   playStoreUrl,
@@ -81,7 +82,7 @@ export default async function ReelPage({
       <Navbar />
 
       <section className="page-x relative mx-auto flex w-full max-w-[1100px] flex-col items-center gap-10 pb-20 pt-28 lg:flex-row lg:gap-20 lg:pt-36">
-        <div className="relative aspect-[9/16] w-full max-w-[340px] shrink-0 overflow-hidden rounded-[32px] border border-white/20 bg-[#18132d] shadow-[0_30px_80px_rgba(162,64,255,0.35)]">
+        <div className="relative aspect-[5/8] w-full max-w-[340px] shrink-0 overflow-hidden rounded-[32px] border border-white/20 bg-[#18132d] shadow-[0_30px_80px_rgba(162,64,255,0.35)]">
           {reel?.video ? (
             <ReelPlayer
               src={reel.video}
@@ -181,6 +182,7 @@ export default async function ReelPage({
       </section>
 
       <Footer />
+      <ScrollAnimations />
     </main>
   );
 }
