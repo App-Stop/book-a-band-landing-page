@@ -25,7 +25,6 @@ export default function ReelPlayer({
   const ref = useRef<HTMLVideoElement>(null);
   const [tapped, setTapped] = useState(false);
   const [muted, setMuted] = useState(true);
-  const [loading, setLoading] = useState(true);
   const [failed, setFailed] = useState(false);
   // false on the server, so phones never render a <video> into the HTML.
   const autoplay = useSyncExternalStore(subscribe, canAutoplay, () => false);
@@ -73,19 +72,10 @@ export default function ReelPlayer({
             playsInline
             preload="auto"
             controls
-            onWaiting={() => setLoading(true)}
-            onPlaying={() => setLoading(false)}
-            onCanPlay={() => setLoading(false)}
             onError={() => setFailed(true)}
             controlsList="nodownload noplaybackrate"
             className="absolute inset-0 size-full object-cover"
           />
-          {loading && (
-            <span
-              aria-label="Loading video"
-              className="pointer-events-none absolute left-1/2 top-1/2 size-12 -translate-x-1/2 -translate-y-1/2 animate-spin rounded-full border-4 border-white/30 border-t-white"
-            />
-          )}
           <button
             type="button"
             onClick={toggleSound}
