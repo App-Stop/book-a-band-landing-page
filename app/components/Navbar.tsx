@@ -1,11 +1,15 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 import { navLinks } from "./site-content";
 
 export default function Navbar() {
+  // Off the home page the section anchors live on "/", so link there.
+  const homePath = usePathname() === "/" ? "" : "/";
   const [open, setOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
 
@@ -37,8 +41,8 @@ export default function Navbar() {
     <header className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-3 pt-3 sm:px-4 sm:pt-4 lg:pt-[30px]">
       <div ref={wrapRef} className="relative w-full max-w-[712px]">
         <nav data-hero="nav" className="glass-nav pointer-events-auto flex w-full items-center justify-between gap-3 rounded-[60px] py-2.5 pl-4 pr-2.5 sm:gap-6 sm:py-3.5 sm:pl-[26px] sm:pr-3.5 lg:gap-[40px] lg:py-[10px] lg:pl-[27px] lg:pr-4 lg:leading-none">
-          <a
-            href="#home"
+          <Link
+            href={`${homePath}#home`}
             onClick={() => setOpen(false)}
             className="flex shrink-0 items-center"
           >
@@ -50,17 +54,17 @@ export default function Navbar() {
               priority
               className="h-7 w-[33px] object-contain sm:h-8 sm:w-[38px]"
             />
-          </a>
+          </Link>
 
           <ul className="hidden items-center gap-4 text-sm leading-normal md:flex lg:gap-6 lg:text-base">
             {navLinks.map(({ label, href }) => (
               <li key={label}>
-                <a
-                  href={href}
+                <Link
+                  href={`${homePath}${href}`}
                   className="transition-opacity duration-200 hover:opacity-70"
                 >
                   {label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -131,8 +135,8 @@ export default function Navbar() {
           <ul className="flex flex-col p-3">
             {navLinks.map(({ label, href }) => (
               <li key={label}>
-                <a
-                  href={href}
+                <Link
+                  href={`${homePath}${href}`}
                   onClick={() => setOpen(false)}
                   tabIndex={open ? 0 : -1}
                   className="flex items-center justify-between rounded-[18px] px-4 py-3.5 text-base font-medium transition-colors duration-200 hover:bg-white/10 active:bg-white/15"
@@ -141,7 +145,7 @@ export default function Navbar() {
                   <span className="text-[var(--pink)]" aria-hidden>
                     →
                   </span>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

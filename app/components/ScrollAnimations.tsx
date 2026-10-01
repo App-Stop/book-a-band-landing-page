@@ -249,7 +249,24 @@ export default function ScrollAnimations() {
       const stopHero = heroIntro();
       scrollReveals();
 
-      const refresh = () => ScrollTrigger.refresh();
+      // Arriving on /#section from another page: the browser jumps before the
+      // pinned/animated sections have their final height, so re-aim after each
+      // layout refresh until the visitor scrolls on their own.
+      let followHash = window.location.hash.length > 1;
+      const stopFollowing = () => {
+        followHash = false;
+      };
+      const inputs = ["wheel", "touchstart", "keydown"] as const;
+      inputs.forEach((e) =>
+        window.addEventListener(e, stopFollowing, { once: true, passive: true }),
+      );
+
+      const refresh = () => {
+        ScrollTrigger.refresh();
+        if (!followHash) return;
+        const id = decodeURIComponent(window.location.hash.slice(1));
+        document.getElementById(id)?.scrollIntoView({ behavior: "instant" });
+      };
       window.addEventListener("load", refresh);
       const late = window.setTimeout(refresh, 1200);
       document.fonts?.ready.then(refresh);
@@ -257,6 +274,7 @@ export default function ScrollAnimations() {
       return () => {
         window.removeEventListener("load", refresh);
         window.clearTimeout(late);
+        inputs.forEach((e) => window.removeEventListener(e, stopFollowing));
         stopHero();
       };
     });
