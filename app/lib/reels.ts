@@ -1,3 +1,5 @@
+import { cache } from "react";
+
 export type Reel = {
   id: string;
   thumbnail: string | null;
@@ -24,7 +26,11 @@ const FETCH_TIMEOUT_MS = 6000;
 
 // Public, no-auth read. A failure to reach the API is reported as "error",
 // not "gone", so an outage is not shown to visitors as a deleted reel.
-export async function getReel(id: string): Promise<ReelResult> {
+// Wrapped in cache() so generateMetadata and the page share one API call per
+// request (a fetch with an abort signal is not deduplicated by Next itself).
+export const getReel = cache(async function getReel(
+  id: string,
+): Promise<ReelResult> {
   if (!/^[a-f0-9]{24}$/i.test(id)) return { status: "gone" };
 
   try {
@@ -56,7 +62,7 @@ export async function getReel(id: string): Promise<ReelResult> {
   } catch {
     return { status: "error" };
   }
-}
+});
 
 export type Platform = "ios" | "android" | "desktop";
 
