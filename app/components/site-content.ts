@@ -266,3 +266,16 @@ export const contactChannels = [
     actionHref: null,
   },
 ] as const;
+
+export const appStoreUrl =
+  "https://apps.apple.com/us/app/book-a-band/id6642645171";
+export const playStoreUrl =
+  "https://play.google.com/store/apps/details?id=app.bookaband.com";
+export const siteUrl = "https://bookabandapp.com";
+
+export const reelCopy = {
+  defaultCaption: "Watch this reel and book live bands on Book A Band.",
+  unavailableTitle: "This reel is no longer available",
+  unavailableDescription:
+    "It may have been removed. Get the app to discover and book live bands.",
+} as const;
