@@ -204,11 +204,11 @@ export default async function ReelPage({
       {/* Ambient brand glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-40 top-20 size-[520px] rounded-full bg-[#a240ff]/25 blur-[140px]"
+        className="pointer-events-none absolute -left-72 top-0 size-[800px] bg-[radial-gradient(closest-side,rgba(162,64,255,0.28),transparent)]"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-40 top-[40%] size-[520px] rounded-full bg-[#ff42dc]/20 blur-[140px]"
+        className="pointer-events-none absolute -right-72 top-[35%] size-[800px] bg-[radial-gradient(closest-side,rgba(255,66,220,0.22),transparent)]"
       />
 
       <Navbar />

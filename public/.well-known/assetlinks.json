@@ -1,11 +1,14 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
     "target": {
       "namespace": "android_app",
       "package_name": "app.bookaband.com",
       "sha256_cert_fingerprints": [
-        "F2:F6:83:23:E6:8D:9B:29:48:82:4A:62:7D:87:D0:8F:1A:D0:10:F5:49:4D:0A:11:C7:4F:42:50:FE:55:7B:50"
+        "F2:F6:83:23:E6:8D:9B:29:48:82:4A:62:7D:87:D0:8F:1A:D0:10:F5:49:4D:0A:11:C7:4F:42:50:FE:55:7B:50",
+        "C6:E5:31:06:D1:A2:EB:D7:CD:31:74:43:EF:B5:2F:E0:E0:6C:1B:3E:DB:0E:0B:12:7D:0D:9B:CB:17:A0:3A:5D"
       ]
     }
   }
