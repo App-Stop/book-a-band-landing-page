@@ -129,7 +129,7 @@ export default function AppFeatures() {
 
               <div className={`mt-6 flex items-center justify-center gap-5 lg:justify-start lg:mt-[3.1cqw] lg:gap-[2.08cqw] ${layout[index].indent}`}>
                 <Image
-                  src="/qr.png"
+                  src="/book-a-band-qr.png"
                   alt="Scan to download the Book a Band app"
                   width={148}
                   height={148}

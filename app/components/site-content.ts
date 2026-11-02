@@ -5,16 +5,22 @@ export const navLinks = [
   { label: "For Artists", href: "#for-artists" },
 ] as const;
 
+export const appStoreUrl =
+  "https://apps.apple.com/us/app/book-a-band-llc/id6796049077";
+export const playStoreUrl =
+  "https://play.google.com/store/apps/details?id=app.bookaband.com";
+export const siteUrl = "https://bookabandapp.com";
+
 export const storeLinks = [
   {
     src: "/app-store.png",
     alt: "Download on the App Store",
-    href: "#app-store",
+    href: appStoreUrl,
   },
   {
     src: "/google-play.png",
     alt: "Get it on Google Play",
-    href: "#google-play",
+    href: playStoreUrl,
   },
 ] as const;
 
@@ -267,11 +273,6 @@ export const contactChannels = [
   },
 ] as const;
 
-export const appStoreUrl =
-  "https://apps.apple.com/us/app/book-a-band/id6642645171";
-export const playStoreUrl =
-  "https://play.google.com/store/apps/details?id=app.bookaband.com";
-export const siteUrl = "https://bookabandapp.com";
 
 export const reelCopy = {
   defaultCaption: "Watch this reel and book live bands on Book A Band.",

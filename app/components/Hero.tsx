@@ -63,7 +63,7 @@ export default function Hero() {
           className="flex flex-wrap items-center gap-6 lg:absolute lg:left-[7.29%] lg:top-[57.3%] lg:gap-[2.08cqw] lg:flex-nowrap"
         >
           <Image
-            src="/qr.png"
+            src="/book-a-band-qr.png"
             alt="Scan to download the Book a Band app"
             width={148}
             height={148}

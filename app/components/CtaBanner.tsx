@@ -38,7 +38,7 @@ export default function CtaBanner() {
 
           <div className="relative flex items-center gap-5 lg:absolute lg:left-[6.16%] lg:top-[63.43%] lg:gap-[2.08cqw]">
             <Image
-              src="/qr.png"
+              src="/book-a-band-qr.png"
               alt="Scan to download the Book a Band app"
               width={148}
               height={148}

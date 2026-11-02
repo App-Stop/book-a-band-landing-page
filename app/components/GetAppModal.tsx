@@ -135,7 +135,7 @@ function GetAppModal({
         <div className="relative z-10 flex flex-row items-center justify-center gap-4 sm:gap-12 lg:gap-[clamp(24px,6vh,100px)]">
           <div className="flex flex-col items-center gap-4 sm:gap-6 lg:gap-[clamp(12px,4vh,40px)]">
             <Image
-              src="/qr.png"
+              src="/book-a-band-qr.png"
               alt="Scan to download the Book a Band app"
               width={342}
               height={342}
