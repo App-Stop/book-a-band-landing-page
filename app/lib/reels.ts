@@ -12,8 +12,10 @@ export type Reel = {
   bandPicture: string | null;
 };
 
+// Production by default: shared links come from the live app. Point
+// BOOKABAND_API_URL at https://api.staging.bookabandapp.com to preview staging reels.
 const API_BASE =
-  process.env.BOOKABAND_API_URL ?? "https://api.staging.bookabandapp.com";
+  process.env.BOOKABAND_API_URL ?? "https://api.bookabandapp.com";
 
 export type ReelResult =
   | { status: "ok"; reel: Reel }
