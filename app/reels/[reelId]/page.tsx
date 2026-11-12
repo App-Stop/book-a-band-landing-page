@@ -41,6 +41,7 @@ export async function generateMetadata({
   return {
     title,
     description,
+    alternates: { canonical: url },
     openGraph: {
       title,
       description,
@@ -65,6 +66,11 @@ async function ReelContent({ reelId }: { reelId: string }) {
   const reel = result.status === "ok" ? result.reel : null;
   const platform = detectPlatform(headerList.get("user-agent"));
 
+  // Portrait reels fill the phone-style frame; landscape and square ones keep
+  // their own proportions (and are never cropped) so nothing important is cut off.
+  const landscape = !!reel?.width && !!reel?.height && reel.width >= reel.height;
+  const fit = landscape ? "contain" : "cover";
+
   const stores = [
     { ...storeLinks[0], href: appStoreUrl, platform: "ios" },
     { ...storeLinks[1], href: playStoreUrl, platform: "android" },
@@ -72,19 +78,26 @@ async function ReelContent({ reelId }: { reelId: string }) {
 
   return (
     <section className="page-x relative mx-auto flex w-full max-w-[1100px] flex-col items-center gap-10 pb-20 pt-28 lg:flex-row lg:gap-20 lg:pt-36">
-      <div className="relative aspect-[5/8] w-full max-w-[340px] shrink-0 overflow-hidden rounded-[32px] border border-white/20 bg-[#18132d] shadow-[0_30px_80px_rgba(162,64,255,0.35)]">
-        {reel?.video ? (
+      <div
+        style={landscape ? { aspectRatio: `${reel!.width} / ${reel!.height}` } : undefined}
+        className={`relative w-full shrink-0 overflow-hidden rounded-[32px] border border-white/20 bg-[#18132d] shadow-[0_30px_80px_rgba(162,64,255,0.35)] ${
+          landscape ? "max-w-[560px]" : "aspect-[5/8] max-w-[340px]"
+        }`}
+      >
+        {reel?.video || reel?.hlsUrl ? (
           <ReelPlayer
             src={reel.video}
+            hlsUrl={reel.hlsUrl}
             poster={reel.thumbnail ?? undefined}
+            fit={fit}
           />
         ) : reel?.thumbnail ? (
           <Image
             src={reel.thumbnail}
             alt={`${reel.bandName} reel thumbnail`}
             fill
-            sizes="340px"
-            className="object-cover"
+            sizes={landscape ? "560px" : "340px"}
+            className={landscape ? "object-contain" : "object-cover"}
             priority
           />
         ) : (

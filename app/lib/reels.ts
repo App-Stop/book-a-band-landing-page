@@ -4,6 +4,11 @@ export type Reel = {
   id: string;
   thumbnail: string | null;
   video: string | null;
+  // Adaptive stream; only set when the backend reports it as ready.
+  hlsUrl: string | null;
+  // Display size after rotation, used to reserve the right aspect ratio.
+  width: number | null;
+  height: number | null;
   genres: string[];
   likes: number;
   views: number;
@@ -12,10 +17,24 @@ export type Reel = {
   bandPicture: string | null;
 };
 
-// Production by default: shared links come from the live app. Point
-// BOOKABAND_API_URL at https://api.staging.bookabandapp.com to preview staging reels.
+// HLS is live on staging first. Set BOOKABAND_API_URL=https://api.bookabandapp.com
+// to read production reels instead.
 const API_BASE =
-  process.env.BOOKABAND_API_URL ?? "https://api.bookabandapp.com";
+  process.env.BOOKABAND_API_URL ?? "https://api.staging.bookabandapp.com";
+
+// Media URLs end up in HTML, so only plain https URLs are accepted.
+function safeUrl(value: unknown): string | null {
+  if (typeof value !== "string") return null;
+  try {
+    const url = new URL(value);
+    return url.protocol === "https:" ? url.toString() : null;
+  } catch {
+    return null;
+  }
+}
+
+const positive = (value: unknown) =>
+  typeof value === "number" && Number.isFinite(value) && value > 0 ? value : null;
 
 export type ReelResult =
   | { status: "ok"; reel: Reel }
@@ -51,14 +70,19 @@ export const getReel = cache(async function getReel(
       status: "ok",
       reel: {
         id: post._id,
-        thumbnail: post.thumbnail ?? null,
-        video: post.video ?? null,
+        thumbnail: safeUrl(post.thumbnail) ?? safeUrl(post.thumbnailWebp),
+        video: safeUrl(post.video),
+        // Use HLS only when the backend says it is ready; anything else
+        // (queued, processing, failed, legacy null) plays the MP4.
+        hlsUrl: post.hlsStatus === "ready" ? safeUrl(post.hlsUrl) : null,
+        width: positive(post.width),
+        height: positive(post.height),
         genres: Array.isArray(post.bandGenres) ? post.bandGenres : [],
         likes: post.likeCount ?? 0,
         views: post.views ?? 0,
         caption: (post.caption ?? "").trim(),
         bandName: post.band?.fullName ?? "A band",
-        bandPicture: post.band?.profilePicture ?? null,
+        bandPicture: safeUrl(post.band?.profilePicture),
       },
     };
   } catch {
