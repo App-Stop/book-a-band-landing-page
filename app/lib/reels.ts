@@ -20,7 +20,7 @@ export type Reel = {
 // HLS is live on staging first. Set BOOKABAND_API_URL=https://api.bookabandapp.com
 // to read production reels instead.
 const API_BASE =
-  process.env.BOOKABAND_API_URL ?? "https://api.staging.bookabandapp.com";
+  process.env.BOOKABAND_API_URL ?? "https://api.bookabandapp.com";
 
 // Media URLs end up in HTML, so only plain https URLs are accepted.
 function safeUrl(value: unknown): string | null {
